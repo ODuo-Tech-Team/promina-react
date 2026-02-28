@@ -32,11 +32,11 @@ export function Footer() {
           {/* Logo */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <Image
-              src="/images/logo-promina-cinza.jpg"
+              src="/images/logo-promina-pb.png"
               alt="Promina - Locação de Máquinas e Equipamentos"
               width={180}
               height={60}
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </div>
 
