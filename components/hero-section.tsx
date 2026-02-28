@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
+import { ContactButton } from "@/components/contact-button"
 import { Play, ArrowRight, CheckCircle2 } from "lucide-react"
 
 const beneficios = [
@@ -94,20 +95,14 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              asChild
+            <ContactButton 
               size="lg"
               className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-lg h-14 px-8"
+              message="Ola! Gostaria de solicitar um orcamento."
             >
-              <a 
-                href="https://wa.me/5583991429596?text=Olá! Gostaria de solicitar um orçamento."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Solicitar Orçamento
-                <ArrowRight className="size-5 ml-2" />
-              </a>
-            </Button>
+              Solicitar Orcamento
+              <ArrowRight className="size-5 ml-2" />
+            </ContactButton>
             <Button 
               variant="outline"
               size="lg"

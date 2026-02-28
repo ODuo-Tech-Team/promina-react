@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { ContactButton } from "@/components/contact-button"
 import { 
   Layers,
   Hammer,
@@ -101,12 +102,6 @@ const beneficios = [
 ]
 
 export function LocacaoEquipamentosSection() {
-  const handleWhatsApp = () => {
-    const phone = "5583987177707"
-    const message = encodeURIComponent("Olá! Gostaria de informações sobre locação de equipamentos.")
-    window.open(`https://wa.me/${phone}?text=${message}`, "_blank")
-  }
-
   return (
     <section id="equipamentos" className="relative py-20 lg:py-28 bg-zinc-900 overflow-hidden">
       {/* Decorative Elements */}
@@ -183,14 +178,14 @@ export function LocacaoEquipamentosSection() {
             <p className="text-zinc-300">
               Não encontrou o equipamento que precisa?
             </p>
-            <Button 
-              onClick={handleWhatsApp}
+            <ContactButton 
               size="lg"
               className="bg-[#FFCC29] hover:bg-[#FFCC29]/90 text-[#363334] font-semibold px-6 shadow-lg shadow-[#FFCC29]/20 transition-all hover:shadow-xl hover:shadow-[#FFCC29]/30"
+              message="Ola! Gostaria de informacoes sobre locacao de equipamentos."
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Consultar Disponibilidade
-            </Button>
+            </ContactButton>
           </div>
         </div>
       </div>

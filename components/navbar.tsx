@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, Phone, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ContactButton } from "@/components/contact-button"
 
 const navLinks = [
   { href: "#inicio", label: "Início" },
@@ -125,18 +126,12 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button 
-              asChild
+            <ContactButton 
               className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-6"
+              message="Ola! Gostaria de solicitar um orcamento."
             >
-              <a 
-                href="https://wa.me/5583991429596?text=Olá! Gostaria de solicitar um orçamento."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Solicitar Orçamento
-              </a>
-            </Button>
+              Solicitar Orcamento
+            </ContactButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -163,18 +158,12 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button 
-                asChild
-                className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold mt-2"
+              <ContactButton 
+                className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold mt-2 w-full"
+                message="Ola! Gostaria de solicitar um orcamento."
               >
-                <a 
-                  href="https://wa.me/5583991429596?text=Olá! Gostaria de solicitar um orçamento."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Solicitar Orçamento
-                </a>
-              </Button>
+                Solicitar Orcamento
+              </ContactButton>
               
               {/* Mobile Contact Info */}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[#363334]/20 text-[#6B6B6B] text-sm">

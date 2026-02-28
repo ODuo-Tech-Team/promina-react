@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { ContactButton } from "@/components/contact-button"
 import { Layers, Hammer, HardHat, ArrowUpFromLine, ArrowRight } from "lucide-react"
 
 const equipamentos = [
@@ -125,24 +126,18 @@ export function MaquinasSection() {
                 </CardContent>
 
                 <CardFooter>
-                  <Button 
+                  <ContactButton 
                     variant="outline"
-                    asChild
                     className={`w-full group/btn transition-colors duration-300 ${
                       isDestaque 
                         ? "border-[#FFCC29] text-[#FFCC29] hover:bg-[#FFCC29] hover:text-[#363334]" 
                         : "border-[#363334] text-[#363334] hover:bg-[#FFCC29] hover:border-[#FFCC29] hover:text-[#363334]"
                     }`}
+                    message={`Ola! Gostaria de consultar a disponibilidade de ${equipamento.titulo}.`}
                   >
-                    <a 
-                      href={`https://wa.me/5583991429596?text=Olá! Gostaria de consultar a disponibilidade de ${equipamento.titulo}.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Consultar Disponibilidade
-                      <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
-                  </Button>
+                    Consultar Disponibilidade
+                    <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  </ContactButton>
                 </CardFooter>
               </Card>
             )
@@ -159,20 +154,14 @@ export function MaquinasSection() {
               Temos mais de 500 equipamentos disponíveis. Entre em contato e encontraremos a solução ideal.
             </p>
           </div>
-          <Button 
-            asChild
+          <ContactButton 
             size="lg"
             className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold whitespace-nowrap"
+            message="Ola! Preciso de um equipamento especifico."
           >
-            <a 
-              href="https://wa.me/5583991429596?text=Olá! Preciso de um equipamento específico."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Falar com Especialista
-              <ArrowRight className="size-5 ml-2" />
-            </a>
-          </Button>
+            Falar com Especialista
+            <ArrowRight className="size-5 ml-2" />
+          </ContactButton>
         </div>
       </div>
     </section>
