@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Layers, Hammer, HardHat, ArrowUpFromLine, ArrowRight } from "lucide-react"
@@ -10,7 +11,6 @@ const equipamentos = [
     titulo: "Andaimes e Escoras",
     descricao: "Estruturas metálicas de alta resistência para obras de todos os portes. Montagem e desmontagem inclusa.",
     icon: Layers,
-    destaque: true,
     itens: ["Andaime tubular", "Escora metálica", "Quadro de andaime", "Torres"],
   },
   {
@@ -18,7 +18,6 @@ const equipamentos = [
     titulo: "Marteletes e Furadeiras",
     descricao: "Equipamentos elétricos e pneumáticos para demolição, perfuração e acabamento de alta precisão.",
     icon: Hammer,
-    destaque: false,
     itens: ["Martelete rompedor", "Furadeira industrial", "Perfuratriz", "Parafusadeira"],
   },
   {
@@ -26,7 +25,6 @@ const equipamentos = [
     titulo: "Betoneiras e Compactadores",
     descricao: "Máquinas para preparo e aplicação de concreto, além de compactação de solo e asfalto.",
     icon: HardHat,
-    destaque: false,
     itens: ["Betoneira 400L", "Compactador de solo", "Vibrador de concreto", "Alisadora"],
   },
   {
@@ -34,12 +32,21 @@ const equipamentos = [
     titulo: "Plataformas Elevatórias",
     descricao: "Equipamentos para trabalho em altura com segurança. Ideais para manutenção e instalações.",
     icon: ArrowUpFromLine,
-    destaque: false,
     itens: ["Plataforma tesoura", "Plataforma articulada", "Andaime suspenso", "Cadeira suspensa"],
   },
 ]
 
 export function MaquinasSection() {
+  const [hoveredId, setHoveredId] = useState<number | null>(null)
+  
+  // Determina qual card está em destaque: o hovered ou o primeiro por padrão
+  const getIsDestaque = (id: number) => {
+    if (hoveredId !== null) {
+      return hoveredId === id
+    }
+    return id === 1 // Primeiro card é destaque por padrão
+  }
+
   return (
     <section id="maquinas" className="py-20 md:py-28 bg-[#F5F5F5]">
       <div className="container mx-auto px-4">
@@ -60,16 +67,20 @@ export function MaquinasSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {equipamentos.map((equipamento) => {
             const Icon = equipamento.icon
+            const isDestaque = getIsDestaque(equipamento.id)
+            
             return (
               <Card 
                 key={equipamento.id}
-                className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                  equipamento.destaque 
+                onMouseEnter={() => setHoveredId(equipamento.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
+                  isDestaque 
                     ? "bg-[#363334] text-white ring-2 ring-[#FFCC29]" 
-                    : "bg-white hover:border-[#FFCC29]"
+                    : "bg-white"
                 }`}
               >
-                {equipamento.destaque && (
+                {isDestaque && (
                   <div className="absolute top-4 right-4">
                     <span className="bg-[#FFCC29] text-[#363334] text-xs font-bold px-3 py-1 rounded-full">
                       Mais Procurado
@@ -78,25 +89,21 @@ export function MaquinasSection() {
                 )}
                 
                 <CardHeader className="pb-2">
-                  <div className={`size-14 rounded-xl flex items-center justify-center mb-4 ${
-                    equipamento.destaque 
+                  <div className={`size-14 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300 ${
+                    isDestaque 
                       ? "bg-[#FFCC29]" 
-                      : "bg-[#FFCC29]/10 group-hover:bg-[#FFCC29] transition-colors"
+                      : "bg-[#FFCC29]/10"
                   }`}>
-                    <Icon className={`size-7 ${
-                      equipamento.destaque 
-                        ? "text-[#363334]" 
-                        : "text-[#363334] group-hover:text-[#363334]"
-                    }`} />
+                    <Icon className="size-7 text-[#363334]" />
                   </div>
-                  <CardTitle className={`text-xl ${
-                    equipamento.destaque ? "text-white" : "text-[#363334]"
+                  <CardTitle className={`text-xl transition-colors duration-300 ${
+                    isDestaque ? "text-white" : "text-[#363334]"
                   }`}>
                     {equipamento.titulo}
                   </CardTitle>
-                  <CardDescription className={
-                    equipamento.destaque ? "text-white/70" : "text-[#6B6B6B]"
-                  }>
+                  <CardDescription className={`transition-colors duration-300 ${
+                    isDestaque ? "text-white/70" : "text-[#6B6B6B]"
+                  }`}>
                     {equipamento.descricao}
                   </CardDescription>
                 </CardHeader>
@@ -106,13 +113,11 @@ export function MaquinasSection() {
                     {equipamento.itens.map((item) => (
                       <li 
                         key={item} 
-                        className={`flex items-center gap-2 text-sm ${
-                          equipamento.destaque ? "text-white/80" : "text-[#6B6B6B]"
+                        className={`flex items-center gap-2 text-sm transition-colors duration-300 ${
+                          isDestaque ? "text-white/80" : "text-[#6B6B6B]"
                         }`}
                       >
-                        <span className={`size-1.5 rounded-full ${
-                          equipamento.destaque ? "bg-[#FFCC29]" : "bg-[#FFCC29]"
-                        }`} />
+                        <span className="size-1.5 rounded-full bg-[#FFCC29]" />
                         {item}
                       </li>
                     ))}
@@ -123,8 +128,8 @@ export function MaquinasSection() {
                   <Button 
                     variant="outline"
                     asChild
-                    className={`w-full group/btn ${
-                      equipamento.destaque 
+                    className={`w-full group/btn transition-colors duration-300 ${
+                      isDestaque 
                         ? "border-[#FFCC29] text-[#FFCC29] hover:bg-[#FFCC29] hover:text-[#363334]" 
                         : "border-[#363334] text-[#363334] hover:bg-[#FFCC29] hover:border-[#FFCC29] hover:text-[#363334]"
                     }`}

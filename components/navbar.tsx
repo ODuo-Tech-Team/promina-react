@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, Phone, MapPin } from "lucide-react"
@@ -14,26 +14,83 @@ const navLinks = [
   { href: "#contato", label: "Contato" },
 ]
 
+const enderecos = [
+  {
+    nome: "Locação CG",
+    endereco: "Rua Padre Aristides Ferreira 240, Catolé - Campina Grande",
+    telefone: "(83) 98717-7707",
+    whatsapp: "5583987177707",
+    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
+  },
+  {
+    nome: "Locação JP",
+    endereco: "Av. Epitácio Pessoa, 2987, Brasimar - João Pessoa",
+    telefone: "(83) 99664-0032",
+    whatsapp: "5583996640032",
+    mapaUrl: "https://maps.google.com/?q=Av.+Epitácio+Pessoa,+2987,+Brasimar,+João+Pessoa",
+  },
+  {
+    nome: "Homecenter CG",
+    endereco: "Rua Padre Aristides Ferreira 240, Catolé - Campina Grande",
+    telefone: "(83) 99803-0018",
+    whatsapp: "5583998030018",
+    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
+  },
+]
+
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [currentEnderecoIndex, setCurrentEnderecoIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEnderecoIndex((prev) => (prev + 1) % enderecos.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const currentEndereco = enderecos[currentEnderecoIndex]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#363334] shadow-lg">
-      {/* Top Bar */}
-      <div className="hidden md:block bg-[#FFCC29] py-2">
+      {/* Top Bar - Rotating Addresses */}
+      <div className="hidden md:block bg-[#FFCC29] py-2 overflow-hidden">
         <div className="container mx-auto px-4 flex items-center justify-between text-[#363334] text-sm font-medium">
-          <div className="flex items-center gap-6">
-            <a href="tel:+558333414000" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <div className="flex items-center gap-6 min-w-0 flex-1">
+            <a 
+              href={`tel:${currentEndereco.telefone.replace(/[^\d+]/g, "")}`}
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0"
+            >
               <Phone className="size-4" />
-              <span>(83) 3341-4000</span>
+              <span className="font-bold">{currentEndereco.nome}:</span>
+              <span>{currentEndereco.telefone}</span>
             </a>
-            <div className="flex items-center gap-2">
-              <MapPin className="size-4" />
-              <span>Campina Grande e João Pessoa - PB</span>
-            </div>
+            <a 
+              href={currentEndereco.mapaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity truncate"
+            >
+              <MapPin className="size-4 shrink-0" />
+              <span className="truncate">{currentEndereco.endereco}</span>
+            </a>
           </div>
-          <div className="flex items-center gap-4">
-            <span>Seg - Sex: 7h às 17h | Sáb: 7h às 12h</span>
+          <div className="flex items-center gap-4 shrink-0">
+            <div className="flex gap-1">
+              {enderecos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentEnderecoIndex(index)}
+                  className={`size-2 rounded-full transition-all ${
+                    index === currentEnderecoIndex 
+                      ? "bg-[#363334]" 
+                      : "bg-[#363334]/30 hover:bg-[#363334]/50"
+                  }`}
+                  aria-label={`Ver endereço ${index + 1}`}
+                />
+              ))}
+            </div>
+            <span className="hidden lg:inline border-l border-[#363334]/30 pl-4">Seg - Sex: 7h às 17h | Sáb: 7h às 12h</span>
           </div>
         </div>
       </div>

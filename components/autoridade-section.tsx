@@ -102,9 +102,9 @@ export function AutoridadeSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {pilares.map((pilar, index) => (
             <AnimatedCard key={pilar.titulo} delay={index * 150}>
-              <div className="group relative">
-                {/* Card */}
-                <div className="relative bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+              <div className="group relative h-full">
+                {/* Card - altura fixa para igualar todos */}
+                <div className="relative bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 h-full flex flex-col">
                   {/* Icon Container */}
                   <div className="mb-6">
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[#FFCC29]/10 flex items-center justify-center group-hover:bg-[#FFCC29] transition-colors duration-500">
@@ -113,15 +113,17 @@ export function AutoridadeSection() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl md:text-2xl font-bold text-[#363334] mb-2">
-                    {pilar.titulo}
-                  </h3>
-                  <p className="text-[#FFCC29] font-semibold text-sm mb-4">
-                    {pilar.descricao}
-                  </p>
-                  <p className="text-[#6B6B6B] leading-relaxed">
-                    {pilar.detalhe}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#363334] mb-2">
+                      {pilar.titulo}
+                    </h3>
+                    <p className="text-[#FFCC29] font-semibold text-sm mb-4">
+                      {pilar.descricao}
+                    </p>
+                    <p className="text-[#6B6B6B] leading-relaxed">
+                      {pilar.detalhe}
+                    </p>
+                  </div>
 
                   {/* Decorative line */}
                   <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[#FFCC29] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />

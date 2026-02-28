@@ -8,18 +8,18 @@ const localizacoes = [
     id: 1,
     tipo: "Locação",
     nome: "Locação Campina Grande",
-    endereco: null,
+    endereco: "Rua Padre Aristides Ferreira 240, Catolé, Campina Grande - PB",
     telefone: "+55 83 98717-7707",
     whatsapp: "5583987177707",
     horario: "Seg - Sex: 7h às 17h | Sáb: 7h às 12h",
-    mapaUrl: null,
+    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
     destaque: true,
   },
   {
     id: 2,
     tipo: "Locação",
     nome: "Locação João Pessoa",
-    endereco: "Av. Pres. Epitácio Pessoa, 2987, Brasimar",
+    endereco: "Av. Pres. Epitácio Pessoa, 2987, Brasimar, João Pessoa - PB",
     telefone: "+55 83 99664-0032",
     whatsapp: "5583996640032",
     horario: "Seg - Sex: 7h às 17h | Sáb: 7h às 12h",
@@ -30,11 +30,11 @@ const localizacoes = [
     id: 3,
     tipo: "Homecenter",
     nome: "Homecenter Campina Grande",
-    endereco: "Rua Padre Aristides Ferreira da Cruz, 240, Catolé",
+    endereco: "Rua Padre Aristides Ferreira 240, Catolé, Campina Grande - PB",
     telefone: "+55 83 99803-0018",
     whatsapp: "5583998030018",
     horario: "Seg - Sex: 7h às 17h | Sáb: 7h às 12h",
-    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+da+Cruz,+240,+Catolé,+Campina+Grande",
+    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
     destaque: false,
   },
 ]
@@ -89,13 +89,18 @@ export function LocalizacoesSection() {
               {/* Conteúdo do Card */}
               <div className="p-6 space-y-4">
                 {/* Endereço */}
-                {local.endereco && (
-                  <div className="flex items-start gap-3">
+                {local.endereco && local.mapaUrl && (
+                  <a 
+                    href={local.mapaUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 group/endereco"
+                  >
                     <MapPin className="w-5 h-5 text-[#FFCC29] mt-0.5 shrink-0" />
-                    <p className="text-[#363334] text-sm leading-relaxed">
+                    <p className="text-[#363334] text-sm leading-relaxed group-hover/endereco:text-[#FFCC29] transition-colors underline-offset-2 group-hover/endereco:underline">
                       {local.endereco}
                     </p>
-                  </div>
+                  </a>
                 )}
 
                 {/* Telefone */}

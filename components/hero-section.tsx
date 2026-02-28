@@ -81,7 +81,7 @@ export function HeroSection() {
               variant="outline"
               size="lg"
               asChild
-              className="border-white/30 text-white hover:bg-white/10 hover:border-[#FFCC29] hover:text-[#FFCC29] font-medium text-lg h-14 px-8"
+              className="border-2 border-white bg-white/10 text-white hover:bg-[#FFCC29] hover:border-[#FFCC29] hover:text-[#363334] font-medium text-lg h-14 px-8"
             >
               <a href="#maquinas">
                 <Play className="size-5 mr-2" />
@@ -93,15 +93,15 @@ export function HeroSection() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-white/20">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">15+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">+ de 15</div>
               <div className="text-white/70 text-sm md:text-base">Anos de Mercado</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">2000+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">+ de 2000</div>
               <div className="text-white/70 text-sm md:text-base">Obras Atendidas</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">500+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">+ de 500</div>
               <div className="text-white/70 text-sm md:text-base">Equipamentos</div>
             </div>
           </div>
