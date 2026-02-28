@@ -71,7 +71,7 @@ function AnimatedCard({
 
 export function AutoridadeSection() {
   return (
-    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section id="sobre" className="py-20 md:py-28 bg-background relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div 
