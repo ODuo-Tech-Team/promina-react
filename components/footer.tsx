@@ -90,7 +90,7 @@ export function Footer() {
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
               <p>© 2026 Promina - Todos os direitos reservados</p>
               <span className="hidden md:inline">|</span>
-              <p>CNPJ: 12.345.678/0001-90</p>
+              <p>CNPJ: 13.799.363/0001-80</p>
             </div>
             <a
               href="https://wa.me/5512996767606?text=Olá! Vi a página da Promina e gostaria de um orçamento para criação de site."
