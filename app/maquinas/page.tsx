@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
@@ -19,6 +19,10 @@ const categorias = [
   { id: "containers", nome: "Containers" },
   { id: "pesados", nome: "Equipamentos Pesados" },
   { id: "geradores", nome: "Geradores" },
+  { id: "ferramentas", nome: "Ferramentas Elétricas" },
+  { id: "jardinagem", nome: "Jardinagem" },
+  { id: "seguranca", nome: "Segurança" },
+  { id: "movimentacao", nome: "Movimentação de Cargas" },
 ]
 
 // Produtos disponíveis
@@ -183,17 +187,214 @@ const produtos = [
     destaque: true,
     especificacoes: ["Diesel", "Industrial", "Silenciado"],
   },
+  // Ferramentas Elétricas
+  {
+    id: 21,
+    nome: "Serra de Bancada DeWalt",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-01%20153704-h37obadGX0GIP0B4JZw47LFDQ51baF.png",
+    destaque: true,
+    especificacoes: ["DeWalt", "Profissional", "254mm"],
+  },
+  {
+    id: 22,
+    nome: "Serra Circular de Bancada Mecan",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagem%20ilustrativa-tZtbNiS5Ab5y2MH1NLXsoDn0CQfiQK.jpg",
+    destaque: false,
+    especificacoes: ["Mecan", "Industrial", "Bancada"],
+  },
+  {
+    id: 23,
+    nome: "Lixadeira Orbital Makita a Bateria",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-01%20154633-dC3pAXuEBXcACCQd2lmgD87aW7S0tG.png",
+    destaque: false,
+    especificacoes: ["Makita", "18V", "Bateria"],
+  },
+  // Jardinagem
+  {
+    id: 24,
+    nome: "Aparador de Cerca Viva Elétrico",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20102557-8OSPycp7fQ7fZczGi9dFiXlvSP2fuB.png",
+    destaque: false,
+    especificacoes: ["Elétrico", "500W", "Corte 51cm"],
+  },
+  {
+    id: 25,
+    nome: "Soprador de Folhas Makita a Gasolina",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20104845-B4lvfhQxLIQGF2nuRLGw20mVQJ9lOU.png",
+    destaque: true,
+    especificacoes: ["Makita", "24.5cc", "Gasolina"],
+  },
+  {
+    id: 26,
+    nome: "Soprador de Folhas Makita a Bateria",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20104942-zQyYeEGPgnvogarUWxMTKaIoo2iHbx.png",
+    destaque: false,
+    especificacoes: ["Makita", "36V", "Com Kit Bateria"],
+  },
+  {
+    id: 27,
+    nome: "Motosserra DeWalt 16\" a Bateria",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20101710-yEYXQDLb4mZTFXVTECSR8CMJfoyArT.png",
+    destaque: true,
+    especificacoes: ["DeWalt", "60V FlexVolt", "40cm"],
+  },
+  {
+    id: 28,
+    nome: "Motosserra Makita 18V a Bateria",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20102128-3PbM4yCZUo5ahZHp3bKVvAj6iZNgrz.png",
+    destaque: false,
+    especificacoes: ["Makita", "18V", "Com Kit Bateria"],
+  },
+  {
+    id: 29,
+    nome: "Roçadeira Makita a Bateria com Kit",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20103819-EKAEBVt0vZIV8jwwLFj1AKEx13RAPO.png",
+    destaque: false,
+    especificacoes: ["Makita", "36V", "Com 2 Baterias"],
+  },
+  {
+    id: 30,
+    nome: "Roçadeira Makita a Bateria",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20103650-5uC6NgTWqWCCbEX7XCDuf0AdJWibX4.png",
+    destaque: false,
+    especificacoes: ["Makita", "18V", "Brushless"],
+  },
+  // Segurança
+  {
+    id: 31,
+    nome: "Cinto de Segurança Paraquedista com Talabarte",
+    categoria: "seguranca",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20120957-7kVrh4ZL17T9mNQmPgRNmuOzuVe0WR.png",
+    destaque: true,
+    especificacoes: ["NR-35", "4 Pontos", "Com Talabarte"],
+  },
+  {
+    id: 32,
+    nome: "Cinto de Segurança Completo Laranja",
+    categoria: "seguranca",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/61ewb%2BghoPL._AC_SX425_-3NtZMyoEsrE86e6LXaqKoUG9jrojdz.jpg",
+    destaque: false,
+    especificacoes: ["NR-35", "5 Pontos", "Com Absorvedor"],
+  },
+  {
+    id: 33,
+    nome: "Escada Extensível de Fibra de Vidro",
+    categoria: "seguranca",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20115016-IgRajCCpWlSMo2I66ESlzx7TUuLjN7.png",
+    destaque: true,
+    especificacoes: ["Fibra de Vidro", "Extensível", "Isolada"],
+  },
+  // Movimentação de Cargas
+  {
+    id: 34,
+    nome: "Balancim Suspenso Construmaq",
+    categoria: "movimentacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Balancim-3-ZnI93DXnyoxtWGUgLjQ4OlLjpWsUaT.png",
+    destaque: true,
+    especificacoes: ["Construmaq", "2,5m", "Até 500kg"],
+  },
+  {
+    id: 35,
+    nome: "Guincho Hidráulico de Oficina FortG",
+    categoria: "movimentacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20122152-jP18DAZuqVPu7GWiKQ6Ym9yfSRZdMx.png",
+    destaque: false,
+    especificacoes: ["FortG", "2 Toneladas", "Hidráulico"],
+  },
+  {
+    id: 36,
+    nome: "Mini Grua Elétrica de Coluna",
+    categoria: "movimentacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20121340-UVaiNcmzmu4H6BfCXNf2q5YxVRzAxb.png",
+    destaque: true,
+    especificacoes: ["Elétrica", "500kg", "Rotativa"],
+  },
+  {
+    id: 37,
+    nome: "Tartaruga para Movimentação de Cargas",
+    categoria: "movimentacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20120212-y52J3R3OIoeTUTLq6ftfHvn16bLn2M.png",
+    destaque: false,
+    especificacoes: ["6 Toneladas", "Rodas Giratórias", "Com Alavanca"],
+  },
+  // Compactadores
+  {
+    id: 38,
+    nome: "Placa Vibratória Compactadora Buffalo",
+    categoria: "pesados",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8102f992eba64e8efe7531921324141f-biOdbPfmRH8zPhpojgY6nORUIC4kKt.jpg",
+    destaque: false,
+    especificacoes: ["Buffalo", "Motor Honda", "90kg"],
+  },
+  {
+    id: 39,
+    nome: "Placa Vibratória Compactadora Reversível",
+    categoria: "pesados",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/259952_1-tHcBuK54YgRiYVYyzy77nhsFTu14UI.jpg",
+    destaque: true,
+    especificacoes: ["Toyama", "Reversível", "160kg"],
+  },
+  {
+    id: 40,
+    nome: "Placa Vibratória Compactadora",
+    categoria: "pesados",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20102413-KZtNkV3JTwIHm1P2vVdPdVUeFZdoal.png",
+    destaque: false,
+    especificacoes: ["Gasolina", "Compactação", "Solo"],
+  },
 ]
+
+const ITEMS_PER_PAGE = 12
 
 export default function MaquinasPage() {
   const [categoriaAtiva, setCategoriaAtiva] = useState("todos")
   const [busca, setBusca] = useState("")
+  const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE)
+  const loaderRef = useRef<HTMLDivElement>(null)
 
   const produtosFiltrados = produtos.filter((produto) => {
     const matchCategoria = categoriaAtiva === "todos" || produto.categoria === categoriaAtiva
     const matchBusca = produto.nome.toLowerCase().includes(busca.toLowerCase())
     return matchCategoria && matchBusca
   })
+
+  const produtosVisiveis = produtosFiltrados.slice(0, visibleItems)
+  const hasMore = visibleItems < produtosFiltrados.length
+
+  // Reset visible items when filter changes
+  useEffect(() => {
+    setVisibleItems(ITEMS_PER_PAGE)
+  }, [categoriaAtiva, busca])
+
+  // Infinite scroll observer
+  const handleObserver = useCallback((entries: IntersectionObserverEntry[]) => {
+    const [target] = entries
+    if (target.isIntersecting && hasMore) {
+      setVisibleItems((prev) => Math.min(prev + ITEMS_PER_PAGE, produtosFiltrados.length))
+    }
+  }, [hasMore, produtosFiltrados.length])
+
+  useEffect(() => {
+    const option = {
+      root: null,
+      rootMargin: "200px",
+      threshold: 0
+    }
+    const observer = new IntersectionObserver(handleObserver, option)
+    if (loaderRef.current) observer.observe(loaderRef.current)
+    
+    return () => observer.disconnect()
+  }, [handleObserver])
 
   return (
     <main className="min-h-screen bg-[#F5F5F5]">
@@ -288,7 +489,7 @@ export default function MaquinasPage() {
 
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {produtosFiltrados.map((produto) => (
+            {produtosVisiveis.map((produto) => (
               <div
                 key={produto.id}
                 className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border ${
@@ -306,6 +507,7 @@ export default function MaquinasPage() {
                     src={produto.imagem}
                     alt={produto.nome}
                     fill
+                    loading="lazy"
                     className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -345,6 +547,16 @@ export default function MaquinasPage() {
               </div>
             ))}
           </div>
+
+          {/* Infinite scroll loader */}
+          {hasMore && (
+            <div ref={loaderRef} className="col-span-full flex justify-center py-8">
+              <div className="flex items-center gap-3 text-gray-500">
+                <div className="w-6 h-6 border-2 border-[#FFCC29] border-t-transparent rounded-full animate-spin" />
+                <span>Carregando mais equipamentos...</span>
+              </div>
+            </div>
+          )}
 
           {/* No results */}
           {produtosFiltrados.length === 0 && (
