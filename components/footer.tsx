@@ -25,7 +25,7 @@ const lojas = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#F5F5F5] text-[#363334]">
+    <footer className="bg-[#F5F5F5] text-[#363334]" id="footer">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
