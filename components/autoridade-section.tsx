@@ -31,10 +31,13 @@ function AnimatedCard({
   children: React.ReactNode
   delay?: number 
 }) {
+  const [mounted, setMounted] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    setMounted(true)
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -56,9 +59,9 @@ function AnimatedCard({
     <div
       ref={ref}
       className={`transition-all duration-700 ease-out ${
-        isVisible 
+        mounted && isVisible 
           ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-8"
+          : mounted ? "opacity-0 translate-y-8" : ""
       }`}
     >
       {children}

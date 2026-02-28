@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react"
 
 export function WhatsAppFAB() {
+  const [mounted, setMounted] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [isPulsing, setIsPulsing] = useState(true)
 
   useEffect(() => {
+    setMounted(true)
+    
     const handleScroll = () => {
       // Show FAB after scrolling 300px
       setIsVisible(window.scrollY > 300)
@@ -18,6 +21,9 @@ export function WhatsAppFAB() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+  
+  // Prevent hydration mismatch
+  if (!mounted) return null
 
   // Pause pulsing after user interaction
   const handleClick = () => {
