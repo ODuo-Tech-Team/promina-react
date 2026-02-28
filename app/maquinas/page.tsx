@@ -14,8 +14,8 @@ import { Button } from "@/components/ui/button"
 // Categorias de equipamentos
 const categorias = [
   { id: "todos", nome: "Todos" },
-  { id: "plataformas", nome: "Plataformas Elevatorias" },
-  { id: "soldas", nome: "Maquinas de Solda" },
+  { id: "plataformas", nome: "Plataformas Elevatórias" },
+  { id: "soldas", nome: "Máquinas de Solda" },
   { id: "containers", nome: "Containers" },
   { id: "pesados", nome: "Equipamentos Pesados" },
   { id: "geradores", nome: "Geradores" },
@@ -33,27 +33,27 @@ const produtos = [
   },
   {
     id: 2,
-    nome: "Plataforma Articulada 11m Eletrica",
+    nome: "Plataforma Articulada 11m Elétrica",
     categoria: "plataformas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLATAFORMA%20ARTICULADA%20ELETRICA%2011%20METROS%20SJ30%20ARJE-qaj83Q7041iuyEI3W4upoA572gD2Pv.png",
     destaque: false,
-    especificacoes: ["Altura: 11m", "Eletrica", "Skyjack"],
+    especificacoes: ["Altura: 11m", "Elétrica", "Skyjack"],
   },
   {
     id: 3,
-    nome: "Plataforma Articulada 16m Eletrica",
+    nome: "Plataforma Articulada 16m Elétrica",
     categoria: "plataformas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/plataforma%20articulada%2016%20m-L1AH0fqKNynMhsugnCea9wEAp97dCs.jpg",
     destaque: true,
-    especificacoes: ["Altura: 16m", "Eletrica", "Zoomlion"],
+    especificacoes: ["Altura: 16m", "Elétrica", "Zoomlion"],
   },
   {
     id: 4,
-    nome: "Plataforma Articulada 16m Eletrica Haulotte",
+    nome: "Plataforma Articulada 16m Elétrica Haulotte",
     categoria: "plataformas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLATAFORMA%20ARTICULADA%2016%20M%20ELETRICA%20HAULOTTE-SVUBVuvt11Ss4ugxp88x1zQEzs43Zy.webp",
     destaque: false,
-    especificacoes: ["Altura: 16m", "Eletrica", "Haulotte"],
+    especificacoes: ["Altura: 16m", "Elétrica", "Haulotte"],
   },
   {
     id: 5,
@@ -65,19 +65,19 @@ const produtos = [
   },
   {
     id: 6,
-    nome: "Plataforma Articulada 20m Eletrica",
+    nome: "Plataforma Articulada 20m Elétrica",
     categoria: "plataformas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLATAFORMA%20ARTICULADA%2020%20M%20ELETRICA%20SJ60%20AJE%2B-am43K2T63us1DWDZiL2dPkLMwBA9fP.jpg",
     destaque: true,
-    especificacoes: ["Altura: 20m", "Eletrica", "Skyjack"],
+    especificacoes: ["Altura: 20m", "Elétrica", "Skyjack"],
   },
   {
     id: 7,
-    nome: "Plataforma Articulada 21m Eletrica",
+    nome: "Plataforma Articulada 21m Elétrica",
     categoria: "plataformas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/plataforma%20articulada%2021%20m%20eletrica-quvWPsryNSHSbUxenJQBV2noqvFHq3.jpg",
     destaque: false,
-    especificacoes: ["Altura: 21m", "Eletrica", "Zoomlion"],
+    especificacoes: ["Altura: 21m", "Elétrica", "Zoomlion"],
   },
   {
     id: 8,
@@ -105,7 +105,7 @@ const produtos = [
   },
   {
     id: 11,
-    nome: "Maquina de Solda Inversora 120A Lynus",
+    nome: "Máquina de Solda Inversora 120A Lynus",
     categoria: "soldas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20135523-j9aMzEoUjuL4KuUSLvupdp21jiEbqi.png",
     destaque: false,
@@ -113,15 +113,15 @@ const produtos = [
   },
   {
     id: 12,
-    nome: "Maquina de Solda Inversora AWT",
+    nome: "Máquina de Solda Inversora AWT",
     categoria: "soldas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/D_NQ_NP_654226-MLB70479272732_072023-O-M1DD4GbRSGf3al5c6YjhLgQDXot35E.webp",
     destaque: false,
-    especificacoes: ["Inversora", "Portatil", "AWT"],
+    especificacoes: ["Inversora", "Portátil", "AWT"],
   },
   {
     id: 13,
-    nome: "Maquina de Solda Inversora Kende",
+    nome: "Máquina de Solda Inversora Kende",
     categoria: "soldas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202023-09-04%20135635-EUXI5jfB8WBYKxSfOEbP8tm2HixPpT.png",
     destaque: true,
@@ -129,7 +129,7 @@ const produtos = [
   },
   {
     id: 14,
-    nome: "Maquina de Solda Inversora CSM",
+    nome: "Máquina de Solda Inversora CSM",
     categoria: "soldas",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/maquina_de_solda_inversora_120a_220v_igbt_mma120_kende_1223_1_65d501152c64ce10b7aa521d49964db8-9768YwpLPr3TujYth4PceMsszkSpAU.webp",
     destaque: false,
@@ -145,19 +145,19 @@ const produtos = [
   },
   {
     id: 16,
-    nome: "Container Modulo Vitrine",
+    nome: "Container Módulo Vitrine",
     categoria: "containers",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4523-LPqwaqeazu6pLD6Xfven4rg95x0qsx.jpg",
     destaque: true,
-    especificacoes: ["Modular", "Escritorio", "Vitrine"],
+    especificacoes: ["Modular", "Escritório", "Vitrine"],
   },
   {
     id: 17,
-    nome: "Container Modulo Escritorio",
+    nome: "Container Módulo Escritório",
     categoria: "containers",
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4524-Cur90215reEkl2fzZXxGRp2QvGnmIn.jpg",
     destaque: false,
-    especificacoes: ["Modular", "Climatizado", "Escritorio"],
+    especificacoes: ["Modular", "Climatizado", "Escritório"],
   },
   {
     id: 18,
@@ -211,15 +211,15 @@ export default function MaquinasPage() {
             className="inline-flex items-center gap-2 text-white/70 hover:text-[#FFCC29] transition-colors mb-6"
           >
             <ArrowLeft className="size-4" />
-            Voltar para o inicio
+            Voltar para o início
           </Link>
           
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              Maquinas e <span className="text-[#FFCC29]">Equipamentos</span>
+              Máquinas e <span className="text-[#FFCC29]">Equipamentos</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-8">
-              Locacao de equipamentos para construcao civil, obras e industria. 
+              Locação de equipamentos para construção civil, obras e indústria. 
               Equipamentos revisados e prontos para uso imediato.
             </p>
             
@@ -227,11 +227,11 @@ export default function MaquinasPage() {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <CheckCircle2 className="size-5 text-[#FFCC29]" />
-                <span className="text-white text-sm">Entrega rapida</span>
+                <span className="text-white text-sm">Entrega rápida</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <CheckCircle2 className="size-5 text-[#FFCC29]" />
-                <span className="text-white text-sm">Suporte tecnico</span>
+                <span className="text-white text-sm">Suporte técnico</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <CheckCircle2 className="size-5 text-[#FFCC29]" />
@@ -337,7 +337,7 @@ export default function MaquinasPage() {
                   {/* CTA Button */}
                   <ContactButton
                     className="w-full bg-[#363334] hover:bg-[#FFCC29] hover:text-[#363334] text-white font-semibold transition-colors"
-                    message={`Ola! Gostaria de verificar disponibilidade e orcamento para: ${produto.nome}`}
+                    message={`Olá! Gostaria de verificar disponibilidade e orçamento para: ${produto.nome}`}
                   >
                     Verificar disponibilidade
                   </ContactButton>
@@ -374,16 +374,16 @@ export default function MaquinasPage() {
       <section className="py-16 bg-[#363334]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Nao encontrou o que procura?
+            Não encontrou o que procura?
           </h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             Temos uma ampla variedade de equipamentos. Entre em contato e nossos 
-            especialistas vao ajudar voce a encontrar a solucao ideal para sua obra.
+            especialistas vão ajudar você a encontrar a solução ideal para sua obra.
           </p>
           <ContactButton
             size="lg"
             className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-8"
-            message="Ola! Estou procurando um equipamento especifico para locacao."
+            message="Olá! Estou procurando um equipamento específico para locação."
           >
             Falar com Especialista
           </ContactButton>

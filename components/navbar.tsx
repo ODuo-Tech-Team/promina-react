@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button"
 import { ContactButton } from "@/components/contact-button"
 
 const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/maquinas", label: "Maquinas e Locacao" },
+  { href: "/", label: "Início" },
+  { href: "/maquinas", label: "Máquinas e Locação" },
   { href: "/#sobre", label: "Sobre" },
-  { href: "/#avaliacoes", label: "Avaliacoes" },
+  { href: "/#avaliacoes", label: "Avaliações" },
   { href: "/#contato", label: "Contato" },
 ]
 
@@ -128,9 +128,9 @@ export function Navbar() {
           <div className="hidden lg:block">
             <ContactButton 
               className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-6"
-              message="Ola! Gostaria de solicitar um orcamento."
+              message="Olá! Gostaria de solicitar um orçamento."
             >
-              Solicitar Orcamento
+              Solicitar Orçamento
             </ContactButton>
           </div>
 
@@ -160,9 +160,9 @@ export function Navbar() {
               ))}
               <ContactButton 
                 className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold mt-2 w-full"
-                message="Ola! Gostaria de solicitar um orcamento."
+                message="Olá! Gostaria de solicitar um orçamento."
               >
-                Solicitar Orcamento
+                Solicitar Orçamento
               </ContactButton>
               
               {/* Mobile Contact Info */}

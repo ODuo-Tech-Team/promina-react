@@ -133,7 +133,7 @@ export function MaquinasSection() {
                         ? "border-[#FFCC29] text-[#FFCC29] hover:bg-[#FFCC29] hover:text-[#363334]" 
                         : "border-[#363334] text-[#363334] hover:bg-[#FFCC29] hover:border-[#FFCC29] hover:text-[#363334]"
                     }`}
-                    message={`Ola! Gostaria de consultar a disponibilidade de ${equipamento.titulo}.`}
+                    message={`Olá! Gostaria de consultar a disponibilidade de ${equipamento.titulo}.`}
                   >
                     Consultar Disponibilidade
                     <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
@@ -157,7 +157,7 @@ export function MaquinasSection() {
           <ContactButton 
             size="lg"
             className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold whitespace-nowrap"
-            message="Ola! Preciso de um equipamento especifico."
+            message="Olá! Preciso de um equipamento específico."
           >
             Falar com Especialista
             <ArrowRight className="size-5 ml-2" />

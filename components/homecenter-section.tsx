@@ -88,7 +88,7 @@ export function HomecenterSection() {
               <ContactButton 
                 size="lg"
                 className="bg-[#FFCC29] hover:bg-[#FFCC29]/90 text-[#363334] font-semibold px-8 py-6 text-base shadow-lg shadow-[#FFCC29]/20 transition-all hover:shadow-xl hover:shadow-[#FFCC29]/30"
-                message="Ola! Gostaria de informacoes sobre os produtos do Homecenter."
+                message="Olá! Gostaria de informações sobre os produtos do Homecenter."
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar com a Promina

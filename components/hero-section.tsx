@@ -86,9 +86,9 @@ export function HeroSection() {
             <ContactButton 
               size="lg"
               className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-lg h-14 px-8"
-              message="Ola! Gostaria de solicitar um orcamento."
+              message="Olá! Gostaria de solicitar um orçamento."
             >
-              Solicitar Orcamento
+              Solicitar Orçamento
               <ArrowRight className="size-5 ml-2" />
             </ContactButton>
             <Button 

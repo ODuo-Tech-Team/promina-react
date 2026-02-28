@@ -7,14 +7,14 @@ import { X, ChevronRight } from "lucide-react"
 
 const unidades = [
   {
-    nome: "Locacao Campina Grande",
+    nome: "Locação Campina Grande",
     telefone: "5583987177707",
     descricao: "Andaimes, escoras e equipamentos",
   },
   {
-    nome: "Locacao Joao Pessoa",
+    nome: "Locação João Pessoa",
     telefone: "5583996640032",
-    descricao: "Maquinas e equipamentos",
+    descricao: "Máquinas e equipamentos",
   },
   {
     nome: "Homecenter Campina Grande",
@@ -36,7 +36,7 @@ export function ContactButton({
   className = "", 
   variant = "default",
   size = "default",
-  message = "Ola! Vim pelo site e gostaria de mais informacoes."
+  message = "Olá! Vim pelo site e gostaria de mais informações."
 }: ContactButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
