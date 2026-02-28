@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { MaquinasSection } from "@/components/maquinas-section"
 import { HomecenterSection } from "@/components/homecenter-section"
+import { AutoridadeSection } from "@/components/autoridade-section"
 import { AvaliacoesSection } from "@/components/avaliacoes-section"
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <MaquinasSection />
       <HomecenterSection />
+      <AutoridadeSection />
       <AvaliacoesSection />
     </main>
   )
