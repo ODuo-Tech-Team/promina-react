@@ -43,7 +43,7 @@ export function HeroSection() {
   }, [videoStarted])
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-32 md:pt-24 pb-24">
+    <section id="inicio" className="relative min-h-screen flex items-center pt-40 md:pt-36 pb-24">
       {/* Video Background */}
       <div className="absolute inset-0 z-0 bg-[#363334]">
         <video
