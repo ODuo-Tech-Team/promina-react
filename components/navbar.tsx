@@ -130,7 +130,7 @@ export function Navbar() {
               className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-6"
             >
               <a 
-                href="https://wa.me/5583991429Se6?text=Olá! Gostaria de solicitar um orçamento."
+                href="https://wa.me/5583991429596?text=Olá! Gostaria de solicitar um orçamento."
                 target="_blank"
                 rel="noopener noreferrer"
               >

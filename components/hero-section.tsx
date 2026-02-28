@@ -48,6 +48,7 @@ export function HeroSection() {
           ref={videoRef}
           muted
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover"
           poster="/images/logo-promina-colorido.png"
         >
