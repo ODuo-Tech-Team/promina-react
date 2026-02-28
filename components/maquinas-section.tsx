@@ -1,0 +1,175 @@
+"use client"
+
+import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Layers, Hammer, HardHat, ArrowUpFromLine, ArrowRight } from "lucide-react"
+
+const equipamentos = [
+  {
+    id: 1,
+    titulo: "Andaimes e Escoras",
+    descricao: "Estruturas metálicas de alta resistência para obras de todos os portes. Montagem e desmontagem inclusa.",
+    icon: Layers,
+    destaque: true,
+    itens: ["Andaime tubular", "Escora metálica", "Quadro de andaime", "Torres"],
+  },
+  {
+    id: 2,
+    titulo: "Marteletes e Furadeiras",
+    descricao: "Equipamentos elétricos e pneumáticos para demolição, perfuração e acabamento de alta precisão.",
+    icon: Hammer,
+    destaque: false,
+    itens: ["Martelete rompedor", "Furadeira industrial", "Perfuratriz", "Parafusadeira"],
+  },
+  {
+    id: 3,
+    titulo: "Betoneiras e Compactadores",
+    descricao: "Máquinas para preparo e aplicação de concreto, além de compactação de solo e asfalto.",
+    icon: HardHat,
+    destaque: false,
+    itens: ["Betoneira 400L", "Compactador de solo", "Vibrador de concreto", "Alisadora"],
+  },
+  {
+    id: 4,
+    titulo: "Plataformas Elevatórias",
+    descricao: "Equipamentos para trabalho em altura com segurança. Ideais para manutenção e instalações.",
+    icon: ArrowUpFromLine,
+    destaque: false,
+    itens: ["Plataforma tesoura", "Plataforma articulada", "Andaime suspenso", "Cadeira suspensa"],
+  },
+]
+
+export function MaquinasSection() {
+  return (
+    <section id="maquinas" className="py-20 md:py-28 bg-[#F5F5F5]">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block text-[#FFCC29] font-semibold text-sm uppercase tracking-wider mb-4">
+            Nossos Equipamentos
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#363334] mb-6 text-balance">
+            O Equipamento Certo para Cada Etapa da sua Obra
+          </h2>
+          <p className="text-lg text-[#6B6B6B] leading-relaxed">
+            Máquinas revisadas e prontas para o trabalho pesado. Reduza custos e aumente a produtividade.
+          </p>
+        </div>
+
+        {/* Equipment Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {equipamentos.map((equipamento) => {
+            const Icon = equipamento.icon
+            return (
+              <Card 
+                key={equipamento.id}
+                className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 ${
+                  equipamento.destaque 
+                    ? "bg-[#363334] text-white ring-2 ring-[#FFCC29]" 
+                    : "bg-white hover:border-[#FFCC29]"
+                }`}
+              >
+                {equipamento.destaque && (
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-[#FFCC29] text-[#363334] text-xs font-bold px-3 py-1 rounded-full">
+                      Mais Procurado
+                    </span>
+                  </div>
+                )}
+                
+                <CardHeader className="pb-2">
+                  <div className={`size-14 rounded-xl flex items-center justify-center mb-4 ${
+                    equipamento.destaque 
+                      ? "bg-[#FFCC29]" 
+                      : "bg-[#FFCC29]/10 group-hover:bg-[#FFCC29] transition-colors"
+                  }`}>
+                    <Icon className={`size-7 ${
+                      equipamento.destaque 
+                        ? "text-[#363334]" 
+                        : "text-[#363334] group-hover:text-[#363334]"
+                    }`} />
+                  </div>
+                  <CardTitle className={`text-xl ${
+                    equipamento.destaque ? "text-white" : "text-[#363334]"
+                  }`}>
+                    {equipamento.titulo}
+                  </CardTitle>
+                  <CardDescription className={
+                    equipamento.destaque ? "text-white/70" : "text-[#6B6B6B]"
+                  }>
+                    {equipamento.descricao}
+                  </CardDescription>
+                </CardHeader>
+
+                <CardContent className="pt-0">
+                  <ul className="space-y-2">
+                    {equipamento.itens.map((item) => (
+                      <li 
+                        key={item} 
+                        className={`flex items-center gap-2 text-sm ${
+                          equipamento.destaque ? "text-white/80" : "text-[#6B6B6B]"
+                        }`}
+                      >
+                        <span className={`size-1.5 rounded-full ${
+                          equipamento.destaque ? "bg-[#FFCC29]" : "bg-[#FFCC29]"
+                        }`} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+
+                <CardFooter>
+                  <Button 
+                    variant="outline"
+                    asChild
+                    className={`w-full group/btn ${
+                      equipamento.destaque 
+                        ? "border-[#FFCC29] text-[#FFCC29] hover:bg-[#FFCC29] hover:text-[#363334]" 
+                        : "border-[#363334] text-[#363334] hover:bg-[#FFCC29] hover:border-[#FFCC29] hover:text-[#363334]"
+                    }`}
+                  >
+                    <a 
+                      href={`https://wa.me/5583991429596?text=Olá! Gostaria de consultar a disponibilidade de ${equipamento.titulo}.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Consultar Disponibilidade
+                      <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            )
+          })}
+        </div>
+
+        {/* CTA Banner */}
+        <div className="mt-16 bg-[#363334] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Não encontrou o que precisa?
+            </h3>
+            <p className="text-white/70">
+              Temos mais de 500 equipamentos disponíveis. Entre em contato e encontraremos a solução ideal.
+            </p>
+          </div>
+          <Button 
+            asChild
+            size="lg"
+            className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold whitespace-nowrap"
+          >
+            <a 
+              href="https://wa.me/5583991429596?text=Olá! Preciso de um equipamento específico."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Falar com Especialista
+              <ArrowRight className="size-5 ml-2" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
