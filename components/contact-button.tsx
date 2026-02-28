@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { X, ChevronRight } from "lucide-react"
 
@@ -39,6 +40,7 @@ export function ContactButton({
 }: ContactButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -53,7 +55,16 @@ export function ContactButton({
 
   const handleSelectUnidade = (telefone: string) => {
     const encodedMessage = encodeURIComponent(message)
-    window.open(`https://wa.me/${telefone}?text=${encodedMessage}`, "_blank")
+    const whatsappUrl = `https://wa.me/${telefone}?text=${encodedMessage}`
+    
+    // Redireciona para a página de obrigado
+    router.push("/obrigado")
+    
+    // Abre o WhatsApp em uma nova aba após um pequeno delay
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank")
+    }, 500)
+    
     setIsOpen(false)
   }
 
