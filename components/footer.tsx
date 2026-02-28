@@ -4,20 +4,20 @@ import { MapPin, Phone } from "lucide-react"
 
 const lojas = [
   {
-    nome: "Locação CG",
-    endereco: "Rua Padre Aristides Ferreira 240, Catolé - CG",
+    nome: "Locação Campina Grande",
+    endereco: "Rua Padre Aristides Ferreira 240, Catolé - Campina Grande",
     telefone: "(83) 98717-7707",
     mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
   },
   {
-    nome: "Locação JP",
-    endereco: "Av. Epitácio Pessoa, 2987, Brasimar - JP",
+    nome: "Locação João Pessoa",
+    endereco: "Av. Epitácio Pessoa, 2987, Brasimar - João Pessoa",
     telefone: "(83) 99664-0032",
     mapaUrl: "https://maps.google.com/?q=Av.+Epitácio+Pessoa,+2987,+Brasimar,+João+Pessoa",
   },
   {
-    nome: "Homecenter CG",
-    endereco: "Rua Padre Aristides Ferreira 240, Catolé - CG",
+    nome: "Homecenter Campina Grande",
+    endereco: "Rua Padre Aristides Ferreira 240, Catolé - Campina Grande",
     telefone: "(83) 99803-0018",
     mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
   },
