@@ -68,23 +68,19 @@ export function ContactButton({
         {children}
       </Button>
 
-      {/* Menu de Unidades */}
-      <div 
-        className={`
-          absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50
-          bg-white rounded-xl shadow-2xl
-          overflow-hidden
-          transition-all duration-200 ease-out
-          ${isOpen 
-            ? "opacity-100 translate-y-0 pointer-events-auto" 
-            : "opacity-0 -translate-y-2 pointer-events-none"
-          }
-        `}
-        style={{ 
-          width: "280px",
-          boxShadow: "0 10px 40px rgba(0,0,0,0.15)"
-        }}
-      >
+      {/* Menu de Unidades - Portal-like fixed positioning */}
+      {isOpen && (
+        <div className="fixed inset-0 z-[9999]" onClick={() => setIsOpen(false)}>
+          <div 
+            onClick={(e) => e.stopPropagation()}
+            className="absolute bg-white rounded-xl shadow-2xl overflow-hidden"
+            style={{ 
+              width: "280px",
+              boxShadow: "0 10px 40px rgba(0,0,0,0.25)",
+              top: menuRef.current ? menuRef.current.getBoundingClientRect().bottom + 8 : 0,
+              left: menuRef.current ? menuRef.current.getBoundingClientRect().left + (menuRef.current.getBoundingClientRect().width / 2) - 140 : 0,
+            }}
+          >
         {/* Header do Menu */}
         <div className="bg-[#25D366] px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -127,7 +123,9 @@ export function ContactButton({
             </button>
           ))}
         </div>
-      </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
