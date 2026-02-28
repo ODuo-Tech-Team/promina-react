@@ -43,7 +43,7 @@ export function WhatsAppFAB() {
 
     handleScroll()
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     document.addEventListener("mousedown", handleClickOutside)
     
     return () => {

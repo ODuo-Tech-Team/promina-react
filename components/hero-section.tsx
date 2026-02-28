@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Play, ArrowRight, CheckCircle2 } from "lucide-react"
 
@@ -12,6 +12,7 @@ const beneficios = [
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoStarted, setVideoStarted] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -21,8 +22,9 @@ export function HeroSection() {
       const scrollY = window.scrollY
       
       // Inicia o vídeo quando a pessoa começa a rolar
-      if (scrollY > 10 && video.paused) {
+      if (scrollY > 10 && video.paused && !videoStarted) {
         video.play()
+        setVideoStarted(true)
       }
     }
 
@@ -31,26 +33,25 @@ export function HeroSection() {
       video.pause()
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     video.addEventListener("ended", handleEnded)
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
       video.removeEventListener("ended", handleEnded)
     }
-  }, [])
+  }, [videoStarted])
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-32 md:pt-24 pb-24">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-[#363334]">
         <video
           ref={videoRef}
           muted
           playsInline
-          preload="metadata"
+          preload="none"
           className="w-full h-full object-cover"
-          poster="/images/logo-promina-colorido.png"
         >
           <source src="/videos/promina-hero-new.mp4" type="video/mp4" />
         </video>
