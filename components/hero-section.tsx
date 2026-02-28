@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Play, ArrowRight, CheckCircle2 } from "lucide-react"
 
@@ -10,19 +11,47 @@ const beneficios = [
 ]
 
 export function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      
+      // Inicia o vídeo quando a pessoa começa a rolar
+      if (scrollY > 10 && video.paused) {
+        video.play()
+      }
+    }
+
+    // Pausa o vídeo quando termina (não faz loop)
+    const handleEnded = () => {
+      video.pause()
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    video.addEventListener("ended", handleEnded)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      video.removeEventListener("ended", handleEnded)
+    }
+  }, [])
+
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-32 md:pt-24">
+    <section id="inicio" className="relative min-h-screen flex items-center pt-32 md:pt-24 pb-24">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
-          autoPlay
+          ref={videoRef}
           muted
-          loop
           playsInline
           className="w-full h-full object-cover"
           poster="/images/logo-promina-colorido.png"
         >
-          <source src="/videos/daniel-promina.mp4" type="video/mp4" />
+          <source src="/videos/promina-hero-new.mp4" type="video/mp4" />
         </video>
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#363334]/95 via-[#363334]/80 to-[#363334]/60" />
@@ -108,8 +137,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+      {/* Scroll Indicator - posicionado abaixo dos stats */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden md:block">
         <a href="#maquinas" className="flex flex-col items-center gap-2 text-white/60 hover:text-[#FFCC29] transition-colors">
           <span className="text-sm">Rolar para baixo</span>
           <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center pt-2">
