@@ -4,6 +4,9 @@ import { MaquinasSection } from "@/components/maquinas-section"
 import { HomecenterSection } from "@/components/homecenter-section"
 import { AutoridadeSection } from "@/components/autoridade-section"
 import { AvaliacoesSection } from "@/components/avaliacoes-section"
+import { LocalizacoesSection } from "@/components/localizacoes-section"
+import { Footer } from "@/components/footer"
+import { WhatsAppFAB } from "@/components/whatsapp-fab"
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
       <HomecenterSection />
       <AutoridadeSection />
       <AvaliacoesSection />
+      <LocalizacoesSection />
+      <Footer />
+      <WhatsAppFAB />
     </main>
   )
 }
