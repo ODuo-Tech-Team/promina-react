@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button"
 import { ContactButton } from "@/components/contact-button"
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#maquinas", label: "Máquinas" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#avaliacoes", label: "Avaliações" },
-  { href: "#contato", label: "Contato" },
+  { href: "/", label: "Inicio" },
+  { href: "/maquinas", label: "Maquinas e Locacao" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#avaliacoes", label: "Avaliacoes" },
+  { href: "/#contato", label: "Contato" },
 ]
 
 const enderecos = [
