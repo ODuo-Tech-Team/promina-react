@@ -25,40 +25,37 @@ const lojas = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#E5E5E5] text-[#363334]" id="footer">
+    <footer className="bg-[#1a1a1a] text-white" id="footer">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <Image
-              src="/images/logo-promina-colorido.png"
+              src="/images/logo-promina-cinza.jpg"
               alt="Promina - Locação de Máquinas e Equipamentos"
               width={180}
               height={60}
               className="h-12 w-auto"
             />
-            <p className="text-[#6B6B6B] text-sm">
-              Locação de Máquinas e Equipamentos
-            </p>
           </div>
 
           {/* Endereços e Telefones */}
           {lojas.map((loja) => (
             <div key={loja.nome} className="flex flex-col gap-2">
-              <h4 className="font-bold text-[#363334] mb-1">{loja.nome}</h4>
+              <h4 className="font-bold text-white mb-1">{loja.nome}</h4>
               <a 
                 href={loja.mapaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 text-sm text-[#6B6B6B] hover:text-[#FFCC29] transition-colors"
+                className="flex items-start gap-2 text-sm text-white/70 hover:text-[#FFCC29] transition-colors"
               >
                 <MapPin className="size-4 mt-0.5 shrink-0" />
                 <span>{loja.endereco}</span>
               </a>
               <a 
                 href={`tel:${loja.telefone.replace(/[^\d+]/g, "")}`}
-                className="flex items-center gap-2 text-sm text-[#6B6B6B] hover:text-[#FFCC29] transition-colors"
+                className="flex items-center gap-2 text-sm text-white/70 hover:text-[#FFCC29] transition-colors"
               >
                 <Phone className="size-4 shrink-0" />
                 <span>{loja.telefone}</span>
@@ -68,13 +65,13 @@ export function Footer() {
 
           {/* Redes Sociais */}
           <div className="flex flex-col items-center md:items-start gap-3">
-            <h4 className="font-bold text-[#363334] mb-1">Siga-nos</h4>
+            <h4 className="font-bold text-white mb-1">Siga-nos</h4>
             <div className="flex items-center gap-3">
               <a
                 href="https://www.instagram.com/prominapb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-[#363334] hover:bg-[#FFCC29] text-white hover:text-[#363334] transition-all duration-300 rounded-lg"
+                className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-[#FFCC29] text-white hover:text-[#363334] transition-all duration-300 rounded-lg"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -87,9 +84,9 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#363334]/10">
+      <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#6B6B6B]">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
               <p>© 2026 Promina - Todos os direitos reservados</p>
               <span className="hidden md:inline">|</span>
@@ -99,7 +96,7 @@ export function Footer() {
               href="https://wa.me/5512996767606?text=Olá! Vi a página da Promina e gostaria de um orçamento para criação de site."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#6B6B6B] hover:text-[#FFCC29] transition-colors"
+              className="text-white/60 hover:text-[#FFCC29] transition-colors"
             >
               Desenvolvido por <span className="font-semibold">V4 Augusto & Co</span>
             </a>

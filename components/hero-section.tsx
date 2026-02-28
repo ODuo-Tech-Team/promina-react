@@ -22,7 +22,7 @@ export function HeroSection() {
           className="w-full h-full object-cover"
           poster="/images/logo-promina-colorido.png"
         >
-          <source src="/videos/promina-hero.mp4" type="video/mp4" />
+          <source src="/videos/daniel-promina.mp4" type="video/mp4" />
         </video>
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#363334]/95 via-[#363334]/80 to-[#363334]/60" />
