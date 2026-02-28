@@ -107,12 +107,12 @@ export function Footer() {
               <p>CNPJ: 12.345.678/0001-90</p>
             </div>
             <a
-              href="https://v4company.com"
+              href="https://wa.me/5512996767606?text=Olá! Vi a página da Promina e gostaria de um orçamento para criação de site."
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#6B6B6B] hover:text-[#FFCC29] transition-colors"
             >
-              Desenvolvido por <span className="font-semibold">V4 Company</span>
+              Desenvolvido por <span className="font-semibold">V4 Augusto & Co</span>
             </a>
           </div>
         </div>
