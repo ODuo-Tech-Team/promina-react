@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
+import { LocacaoEquipamentosSection } from "@/components/locacao-equipamentos-section"
 import { MaquinasSection } from "@/components/maquinas-section"
 import { HomecenterSection } from "@/components/homecenter-section"
 import { AutoridadeSection } from "@/components/autoridade-section"
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+      <LocacaoEquipamentosSection />
       <MaquinasSection />
       <HomecenterSection />
       <AutoridadeSection />
