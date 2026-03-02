@@ -59,7 +59,7 @@ export default function ObrigadoPage() {
       {/* Header */}
       <header className="bg-[#FFCC29] py-4">
         <div className="container mx-auto px-4">
-          <Link href="/" className="inline-block">
+          <Link href="/" prefetch={true} className="inline-block">
             <Image
               src="/images/logo-promina-colorido.png"
               alt="Promina"
@@ -112,7 +112,7 @@ export default function ObrigadoPage() {
               size="lg"
               className="border-[#363334] text-[#363334] hover:bg-[#363334] hover:text-white"
             >
-              <Link href="/">
+              <Link href="/" prefetch={true}>
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Voltar ao Site
               </Link>

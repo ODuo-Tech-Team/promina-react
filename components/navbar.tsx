@@ -117,6 +117,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={true}
                 className="text-[#363334] font-medium hover:text-[#FFCC29] transition-colors"
               >
                 {link.label}
@@ -152,6 +153,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch={true}
                   className="text-[#363334] font-medium hover:text-[#FFCC29] transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >

@@ -7,9 +7,10 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppFAB } from "@/components/whatsapp-fab"
 import { ContactButton } from "@/components/contact-button"
-import { Search, Filter, ArrowLeft, CheckCircle2 } from "lucide-react"
+import { Search, ArrowLeft, CheckCircle2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+
 
 // Categorias de equipamentos
 const categorias = [
@@ -566,13 +567,14 @@ export default function MaquinasPage() {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FFCC29]/5 rounded-full blur-2xl" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <Link 
-            href="/"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-[#FFCC29] transition-colors mb-6"
-          >
-            <ArrowLeft className="size-4" />
-            Voltar para o início
-          </Link>
+<Link
+              href="/"
+              prefetch={true}
+              className="inline-flex items-center gap-2 text-white/70 hover:text-[#FFCC29] transition-colors mb-6"
+            >
+              <ArrowLeft className="size-4" />
+              Voltar para o início
+            </Link>
           
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
