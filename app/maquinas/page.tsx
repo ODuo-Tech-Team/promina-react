@@ -667,6 +667,8 @@ export default function MaquinasPage() {
                     alt={produto.nome}
                     fill
                     loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    quality={75}
                     className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
