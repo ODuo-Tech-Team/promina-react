@@ -19,6 +19,7 @@ const categorias = [
   { id: "ferramentas", nome: "Ferramentas Elétricas" },
   { id: "compactacao", nome: "Compactação e Terraplanagem" },
   { id: "plataformas", nome: "Plataformas e Containers" },
+  { id: "agua", nome: "Água e Esgotamentos" },
 ]
 
 // Produtos disponíveis
@@ -242,6 +243,39 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4523-LPqwaqeazu6pLD6Xfven4rg95x0qsx.jpg",
     destaque: false,
     especificacoes: ["Containers Almoxarifados", "Modular", "Seguro"],
+  },
+  // ÁGUA E ESGOTAMENTOS
+  {
+    id: 28,
+    nome: "Lavajato a Gasolina Toyama 3400 PSI",
+    categoria: "agua",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LAVAJATO%20GASOLINA%203400-YYaaXDrQDZVNHcKU78MsXGJKsNKohq.jpg",
+    destaque: true,
+    especificacoes: ["Lavadora Alta Pressão", "Toyama", "3400 PSI"],
+  },
+  {
+    id: 29,
+    nome: "Lavajato Elétrico Monofásico/Trifásico",
+    categoria: "agua",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LAVAJATO%20MONOFASICAS%20E%20TRIFASICAS-L0k64wCSm0bkcC9bY6Bm7xWEGuvjik.jpg",
+    destaque: true,
+    especificacoes: ["Lavadora Alta Pressão", "Kärcher", "Industrial"],
+  },
+  {
+    id: 30,
+    nome: "Bomba Submersa de Mangote",
+    categoria: "agua",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BOMBAS%20SUB%20DE%20MANGOTE-Jicu7mUxoiaBvgHILDzBkHx5vDGG4U.jpg",
+    destaque: false,
+    especificacoes: ["Bomba Submersa", "Vibromak", "Com Mangote"],
+  },
+  {
+    id: 31,
+    nome: "Bomba Submersível Schneider",
+    categoria: "agua",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BOMBAS%20SUBMERSIVEIS-0kcFOOXW8mi1e7j8FDPj2734ktWUIn.jpg",
+    destaque: true,
+    especificacoes: ["Bomba Submersível", "Schneider", "Esgotamento"],
   },
 ]
 
