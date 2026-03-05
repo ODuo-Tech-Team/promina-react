@@ -22,6 +22,7 @@ const enderecos = [
     telefone: "(83) 98717-7707",
     whatsapp: "5583987177707",
     mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
+    horario: "Seg-Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
   },
   {
     nome: "Locação JP",
@@ -29,6 +30,7 @@ const enderecos = [
     telefone: "(83) 99664-0032",
     whatsapp: "5583996640032",
     mapaUrl: "https://maps.app.goo.gl/13u6UD72TjYrG7DN6",
+    horario: "Seg-Sex: 07:00 às 17:30",
   },
   {
     nome: "Home Center CG",
@@ -36,6 +38,7 @@ const enderecos = [
     telefone: "(83) 99803-0018",
     whatsapp: "5583998030018",
     mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
+    horario: "Seg-Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
   },
 ]
 
@@ -91,7 +94,7 @@ export function Navbar() {
                 />
               ))}
             </div>
-            <span className="hidden lg:inline border-l border-[#363334]/30 pl-4">Seg - Sex: 7h às 17h | Sáb: 7h às 12h</span>
+            <span className="hidden lg:inline border-l border-[#363334]/30 pl-4">{currentEndereco.horario}</span>
           </div>
         </div>
       </div>
