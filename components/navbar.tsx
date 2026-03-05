@@ -18,24 +18,24 @@ const navLinks = [
 const enderecos = [
   {
     nome: "Locação CG",
-    endereco: "Rua Padre Aristides Ferreira 240, Catolé - Campina Grande",
+    endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé - Campina Grande",
     telefone: "(83) 98717-7707",
     whatsapp: "5583987177707",
-    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
+    mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
   },
   {
     nome: "Locação JP",
-    endereco: "Av. Epitácio Pessoa, 2987, Brasimar - João Pessoa",
+    endereco: "Av. Pres. Epitácio Pessoa, 2987, Estados - João Pessoa",
     telefone: "(83) 99664-0032",
     whatsapp: "5583996640032",
-    mapaUrl: "https://maps.google.com/?q=Av.+Epitácio+Pessoa,+2987,+Brasimar,+João+Pessoa",
+    mapaUrl: "https://maps.app.goo.gl/13u6UD72TjYrG7DN6",
   },
   {
-    nome: "Homecenter CG",
-    endereco: "Rua Padre Aristides Ferreira 240, Catolé - Campina Grande",
+    nome: "Home Center CG",
+    endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé - Campina Grande",
     telefone: "(83) 99803-0018",
     whatsapp: "5583998030018",
-    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
+    mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
   },
 ]
 

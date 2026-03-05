@@ -17,7 +17,7 @@ const unidades = [
     descricao: "Máquinas e equipamentos",
   },
   {
-    nome: "Homecenter Campina Grande",
+    nome: "Home Center Campina Grande",
     telefone: "5583998030018",
     descricao: "Tintas, ferramentas e acabamento",
   },

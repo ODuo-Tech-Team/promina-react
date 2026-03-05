@@ -8,33 +8,33 @@ const localizacoes = [
     id: 1,
     tipo: "Locação",
     nome: "Locação Campina Grande",
-    endereco: "Rua Padre Aristides Ferreira 240, Catolé, Campina Grande - PB",
+    endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé, Campina Grande - PB",
     telefone: "+55 83 98717-7707",
     whatsapp: "5583987177707",
-    horario: "Seg - Sex: 7h às 17h | Sáb: 7h às 12h",
-    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
+    horario: "Seg - Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
+    mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
     destaque: true,
   },
   {
     id: 2,
     tipo: "Locação",
     nome: "Locação João Pessoa",
-    endereco: "Av. Pres. Epitácio Pessoa, 2987, Brasimar, João Pessoa - PB",
+    endereco: "Av. Pres. Epitácio Pessoa, 2987, Estados, João Pessoa - PB",
     telefone: "+55 83 99664-0032",
     whatsapp: "5583996640032",
-    horario: "Seg - Sex: 7h às 17h | Sáb: 7h às 12h",
-    mapaUrl: "https://maps.google.com/?q=Av.+Pres.+Epitácio+Pessoa,+2987,+Brasimar,+João+Pessoa",
+    horario: "Seg - Sex: 07:00 às 17:30",
+    mapaUrl: "https://maps.app.goo.gl/13u6UD72TjYrG7DN6",
     destaque: false,
   },
   {
     id: 3,
-    tipo: "Homecenter",
-    nome: "Homecenter Campina Grande",
-    endereco: "Rua Padre Aristides Ferreira 240, Catolé, Campina Grande - PB",
+    tipo: "Home Center",
+    nome: "Home Center Campina Grande",
+    endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé, Campina Grande - PB",
     telefone: "+55 83 99803-0018",
     whatsapp: "5583998030018",
-    horario: "Seg - Sex: 7h às 17h | Sáb: 7h às 12h",
-    mapaUrl: "https://maps.google.com/?q=Rua+Padre+Aristides+Ferreira+240,+Catolé,+Campina+Grande",
+    horario: "Seg - Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
+    mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
     destaque: false,
   },
 ]
@@ -70,17 +70,17 @@ export function LocalizacoesSection() {
               {/* Header do Card */}
               <div className={`
                 p-4 border-b-2 border-[#363334]
-                ${local.tipo === "Homecenter" ? "bg-[#FFCC29]" : "bg-[#363334]"}
+                ${local.tipo === "Home Center" ? "bg-[#FFCC29]" : "bg-[#363334]"}
               `}>
                 <span className={`
                   text-xs font-bold uppercase tracking-wider
-                  ${local.tipo === "Homecenter" ? "text-[#363334]" : "text-[#FFCC29]"}
+                  ${local.tipo === "Home Center" ? "text-[#363334]" : "text-[#FFCC29]"}
                 `}>
                   {local.tipo}
                 </span>
                 <h3 className={`
                   text-xl font-bold mt-1
-                  ${local.tipo === "Homecenter" ? "text-[#363334]" : "text-white"}
+                  ${local.tipo === "Home Center" ? "text-[#363334]" : "text-white"}
                 `}>
                   {local.nome}
                 </h3>

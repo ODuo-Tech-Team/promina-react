@@ -59,7 +59,7 @@ export function HomecenterSection() {
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight text-balance">
                 Promina{" "}
-                <span className="text-[#FFCC29]">Homecenter</span>
+                <span className="text-[#FFCC29]">Home Center</span>
                 : Acabamento e Manutenção
               </h2>
               
@@ -87,7 +87,7 @@ export function HomecenterSection() {
               <ContactButton 
                 size="lg"
                 className="bg-[#FFCC29] hover:bg-[#FFCC29]/90 text-[#363334] font-semibold px-8 py-6 text-base shadow-lg shadow-[#FFCC29]/20 transition-all hover:shadow-xl hover:shadow-[#FFCC29]/30"
-                message="Olá! Gostaria de informações sobre os produtos do Homecenter."
+                message="Olá! Gostaria de informações sobre os produtos do Home Center."
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar com a Promina
@@ -97,10 +97,10 @@ export function HomecenterSection() {
             {/* Store Info */}
             <div className="pt-4 border-t border-zinc-800">
               <p className="text-sm text-zinc-500">
-                Av. Canal de Bodocongó, 1230 - Bodocongó
+                R. Padre Aristides Ferreira da Cruz, 240, Catolé - Campina Grande
               </p>
               <p className="text-sm text-zinc-400 mt-1">
-                Segunda a Sexta: 7h às 17h | Sábado: 7h às 12h
+                Segunda a Sexta: 07:30 às 17:30 | Sábado: 08:00 às 12:00
               </p>
             </div>
           </div>
