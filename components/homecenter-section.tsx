@@ -23,7 +23,7 @@ const features = [
     icon: Droplets,
     title: "Impermeabilização",
     description: "Soluções definitivas contra umidade e infiltrações",
-    highlights: ["Mantas asfálticas", "Impermeabilizantes", "Aplicação técnica"]
+    highlights: ["Mantas asfálticas", "Impermeabilizantes", "Linha profissional"]
   },
   {
     icon: Wrench,
@@ -35,8 +35,8 @@ const features = [
 
 const benefits = [
   { icon: Award, text: "Marcas Premium" },
-  { icon: Shield, text: "Garantia Estendida" },
-  { icon: Sparkles, text: "Consultoria Técnica" }
+  { icon: Shield, text: "Qualidade Garantida" },
+  { icon: Sparkles, text: "Atendimento Especializado" }
 ]
 
 export function HomecenterSection() {

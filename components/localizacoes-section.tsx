@@ -10,6 +10,7 @@ const localizacoes = [
     nome: "Locação Campina Grande",
     endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé, Campina Grande - PB",
     telefone: "+55 83 98717-7707",
+    telefoneFixo: "(83) 3322-7707",
     whatsapp: "5583987177707",
     horario: "Seg - Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
     mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
@@ -21,6 +22,7 @@ const localizacoes = [
     nome: "Locação João Pessoa",
     endereco: "Av. Pres. Epitácio Pessoa, 2987, Estados, João Pessoa - PB",
     telefone: "+55 83 99664-0032",
+    telefoneFixo: "(83) 2178-5766",
     whatsapp: "5583996640032",
     horario: "Seg - Sex: 07:00 às 17:30",
     mapaUrl: "https://maps.app.goo.gl/13u6UD72TjYrG7DN6",
@@ -32,6 +34,7 @@ const localizacoes = [
     nome: "Home Center Campina Grande",
     endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé, Campina Grande - PB",
     telefone: "+55 83 99803-0018",
+    telefoneFixo: "(83) 3322-7707",
     whatsapp: "5583998030018",
     horario: "Seg - Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
     mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
@@ -103,9 +106,20 @@ export function LocalizacoesSection() {
                   </a>
                 )}
 
-                {/* Telefone */}
+                {/* Telefone Fixo */}
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-[#FFCC29] shrink-0" />
+                  <a 
+                    href={`tel:${local.telefoneFixo.replace(/[^\d+]/g, "")}`}
+                    className="text-[#363334] font-semibold hover:text-[#FFCC29] transition-colors"
+                  >
+                    {local.telefoneFixo}
+                  </a>
+                </div>
+
+                {/* WhatsApp */}
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-[#25D366] shrink-0" />
                   <a 
                     href={`tel:${local.telefone.replace(/\s/g, "")}`}
                     className="text-[#363334] font-semibold hover:text-[#FFCC29] transition-colors"

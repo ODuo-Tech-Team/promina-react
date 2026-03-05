@@ -151,7 +151,7 @@ export function AutoridadeSection() {
                 <div className="text-sm text-gray-400">Unidades na Paraíba</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-[#FFCC29] mb-1">500+</div>
+                <div className="text-3xl md:text-4xl font-bold text-[#FFCC29] mb-1">10 mil+</div>
                 <div className="text-sm text-gray-400">Equipamentos disponíveis</div>
               </div>
               <div>

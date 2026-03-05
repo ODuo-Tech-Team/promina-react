@@ -5,19 +5,25 @@ const lojas = [
   {
     nome: "Locação Campina Grande",
     endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé - Campina Grande",
+    telefoneFixo: "(83) 3322-7707",
     telefone: "(83) 98717-7707",
+    horario: "Seg-Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
     mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
   },
   {
     nome: "Locação João Pessoa",
     endereco: "Av. Pres. Epitácio Pessoa, 2987, Estados - João Pessoa",
+    telefoneFixo: "(83) 2178-5766",
     telefone: "(83) 99664-0032",
+    horario: "Seg-Sex: 07:00 às 17:30",
     mapaUrl: "https://maps.app.goo.gl/13u6UD72TjYrG7DN6",
   },
   {
     nome: "Home Center Campina Grande",
     endereco: "R. Padre Aristides Ferreira da Cruz, 240, Catolé - Campina Grande",
+    telefoneFixo: "(83) 3322-7707",
     telefone: "(83) 99803-0018",
+    horario: "Seg-Sex: 07:30 às 17:30 | Sáb: 08:00 às 12:00",
     mapaUrl: "https://maps.app.goo.gl/3Wb9LecU49ikWQo19",
   },
 ]
@@ -31,7 +37,7 @@ export function Footer() {
           {/* Logo */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <Image
-              src="/images/logo-promina-pb.png"
+              src="/images/logo-promina-ba.png"
               alt="Promina - Locação de Máquinas e Equipamentos"
               width={180}
               height={60}
@@ -53,12 +59,20 @@ export function Footer() {
                 <span>{loja.endereco}</span>
               </a>
               <a 
+                href={`tel:${loja.telefoneFixo.replace(/[^\d+]/g, "")}`}
+                className="flex items-center gap-2 text-sm text-white/70 hover:text-[#FFCC29] transition-colors"
+              >
+                <Phone className="size-4 shrink-0" />
+                <span>Fixo: {loja.telefoneFixo}</span>
+              </a>
+              <a 
                 href={`tel:${loja.telefone.replace(/[^\d+]/g, "")}`}
                 className="flex items-center gap-2 text-sm text-white/70 hover:text-[#FFCC29] transition-colors"
               >
                 <Phone className="size-4 shrink-0" />
-                <span>{loja.telefone}</span>
+                <span>Cel: {loja.telefone}</span>
               </a>
+              <p className="text-xs text-white/50 mt-1">{loja.horario}</p>
             </div>
           ))}
 

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { ContactButton } from "@/components/contact-button"
 import { 
   Layers,
@@ -88,7 +89,7 @@ const equipamentos = [
   },
   {
     icon: Shovel,
-    title: "Máquinas Elétricas e a Combustão",
+    title: "Ferramentas Elétricas",
     description: "Equipamentos de pequeno porte para diversas aplicações",
     quantidade: "Diversos"
   }
@@ -143,9 +144,11 @@ export function LocacaoEquipamentosSection() {
         {/* Equipment Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {equipamentos.map((equipamento, index) => (
-            <div 
+            <Link 
               key={equipamento.title}
-              className="group relative p-5 bg-zinc-800/50 rounded-xl border border-zinc-700/50 hover:border-[#FFCC29]/30 transition-all duration-300 hover:bg-zinc-800/80"
+              href="/maquinas"
+              prefetch={true}
+              className="group relative p-5 bg-zinc-800/50 rounded-xl border border-zinc-700/50 hover:border-[#FFCC29]/30 transition-all duration-300 hover:bg-zinc-800/80 cursor-pointer"
             >
               <div className="flex items-start gap-4">
                 {/* Icon */}
@@ -167,7 +170,7 @@ export function LocacaoEquipamentosSection() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

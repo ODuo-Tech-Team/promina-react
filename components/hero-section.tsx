@@ -111,11 +111,11 @@ export function HeroSection() {
               <div className="text-white/70 text-sm md:text-base">Anos de Mercado</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">+ de 2000</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">+ de 15 mil</div>
               <div className="text-white/70 text-sm md:text-base">Obras Atendidas</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">+ de 500</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#FFCC29]">+ de 10 mil</div>
               <div className="text-white/70 text-sm md:text-base">Equipamentos</div>
             </div>
           </div>

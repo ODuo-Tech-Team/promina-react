@@ -61,7 +61,7 @@ export default function ObrigadoPage() {
         <div className="container mx-auto px-4">
           <Link href="/" prefetch={true} className="inline-block">
             <Image
-              src="/images/logo-promina-colorido.png"
+              src="/images/logo-promina-pb.png"
               alt="Promina"
               width={150}
               height={50}
@@ -117,16 +117,28 @@ export default function ObrigadoPage() {
                 Voltar ao Site
               </Link>
             </Button>
-            <Button 
-              asChild
-              size="lg"
-              className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-semibold"
-            >
-              <a href="tel:+558333414000">
-                <Phone className="w-5 h-5 mr-2" />
-                Ligar Agora
-              </a>
-            </Button>
+            <div className="flex flex-col gap-2">
+              <Button 
+                asChild
+                size="lg"
+                className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-semibold"
+              >
+                <a href="tel:+558333227707">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Campina Grande: (83) 3322-7707
+                </a>
+              </Button>
+              <Button 
+                asChild
+                size="lg"
+                className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-semibold"
+              >
+                <a href="tel:+558321785766">
+                  <Phone className="w-5 h-5 mr-2" />
+                  João Pessoa: (83) 2178-5766
+                </a>
+              </Button>
+            </div>
           </div>
 
           {/* Trust Badges */}
