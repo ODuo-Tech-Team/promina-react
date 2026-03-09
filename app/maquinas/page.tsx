@@ -25,6 +25,7 @@ const categorias = [
   { id: "martelos", nome: "Martelos e Marteletes" },
   { id: "geradores", nome: "Geradores de Energia" },
   { id: "modulos", nome: "Módulos e Containers" },
+  { id: "elevacao", nome: "Elevação de Carga e Pessoas" },
 ]
 
 // Produtos disponíveis
@@ -495,6 +496,55 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SERRAMARMORE-DXTaS6Ntcvxb6ncmjcj2iaswjsY6oB.webp",
     destaque: false,
     especificacoes: ["Serra Mármore", "DeWalt", "1050W"],
+  },
+  // ELEVAÇÃO DE CARGA E PESSOAS
+  {
+    id: 58,
+    nome: "Plataforma Articulada 16m Zoomlion ZA14J",
+    categoria: "elevacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLATAFORMASARTICULADAS16METROS-5MiWzEG6j8uL4JxRI9CKDGUFT4BZWB.jpg",
+    destaque: true,
+    especificacoes: ["Plataforma Articulada", "Zoomlion", "16 metros"],
+  },
+  {
+    id: 59,
+    nome: "Empilhadeira a Combustão ou Elétrica Strongway",
+    categoria: "elevacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/EMPILHADEIRAS%20A%20COMBUSTAO%CC%83%20OU%20ELETRICA-qUV4Ca5QfVJRvhYJ9GAo6a2WwgVhBe.png",
+    destaque: true,
+    especificacoes: ["Empilhadeira", "Strongway", "Elétrica/Combustão"],
+  },
+  {
+    id: 60,
+    nome: "Plataforma Tesoura 12m Zoomlion",
+    categoria: "elevacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLATAFORMASTESOURA12M-VLHsMwT2uqqG0BloXaehjRQmKNdBcR.webp",
+    destaque: true,
+    especificacoes: ["Plataforma Tesoura", "Zoomlion", "12 metros"],
+  },
+  {
+    id: 61,
+    nome: "Balancim Menegotti 2 a 6 metros",
+    categoria: "elevacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BALANCIM%20DE%202%20A%206%20METROS-bD8aVorzVweAcyR8Q9DX0tr01BoFLd.png",
+    destaque: false,
+    especificacoes: ["Balancim", "Menegotti", "2 a 6 metros"],
+  },
+  {
+    id: 62,
+    nome: "Caminhão Munck 7 a 52 Toneladas",
+    categoria: "elevacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CAMINHAO%20MUNCK%20DE%207%20ATE%2052%20TON-AXz4Buwlaw8vV5dPHDm7M3GlMNmP9h.png",
+    destaque: true,
+    especificacoes: ["Caminhão Munck", "Promina", "7 a 52 ton"],
+  },
+  {
+    id: 63,
+    nome: "Plataforma Articulada 28m SkyJack SJ85 AJ",
+    categoria: "elevacao",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLATAFORMA%20ARTICULADA%2028%20METROS-sSG9Zb2VY8dUIw9LlOCFaudDMkZipa.jpg",
+    destaque: true,
+    especificacoes: ["Plataforma Articulada", "SkyJack SJ85 AJ", "28 metros"],
   },
 ]
 
