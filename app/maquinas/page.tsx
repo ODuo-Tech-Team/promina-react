@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect, useRef, useCallback, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -8,7 +8,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppFAB } from "@/components/whatsapp-fab"
 import { ContactButton } from "@/components/contact-button"
-import { Search, ArrowLeft, CheckCircle2 } from "lucide-react"
+import { Search, ArrowLeft, CheckCircle2, Loader2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
@@ -379,7 +379,23 @@ const produtos = [
 
 const ITEMS_PER_PAGE = 12
 
+function MaquinasLoading() {
+  return (
+    <div className="min-h-screen bg-[#f8f8f6] flex items-center justify-center">
+      <Loader2 className="size-8 animate-spin text-[#FFCC29]" />
+    </div>
+  )
+}
+
 export default function MaquinasPage() {
+  return (
+    <Suspense fallback={<MaquinasLoading />}>
+      <MaquinasContent />
+    </Suspense>
+  )
+}
+
+function MaquinasContent() {
   const searchParams = useSearchParams()
   const [categoriaAtiva, setCategoriaAtiva] = useState(() => {
     return searchParams.get("categoria") ?? "todos"
