@@ -23,6 +23,7 @@ const categorias = [
   { id: "jardinagem", nome: "Jardinagem" },
   { id: "tubulacoes", nome: "Tubulações e Acessórios" },
   { id: "martelos", nome: "Martelos e Marteletes" },
+  { id: "geradores", nome: "Geradores de Energia" },
 ]
 
 // Produtos disponíveis
@@ -386,6 +387,31 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MARTELOSDEMOLIDORES%20DE%2016%20A%2030%20KG-JfGwkEoCWiHeHXUGczh0Oakpl8nBgA.png",
     destaque: false,
     especificacoes: ["Martelo Demolidor", "DeWalt", "16 a 30 kg"],
+  },
+  // GERADORES DE ENERGIA
+  {
+    id: 45,
+    nome: "Geradores Trifásicos a Diesel 50 a 200 KVA MWM",
+    categoria: "geradores",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GERADORES%20%20TRIFASICOS%20A%20DIESEL%20DE%2050%20A%20200%20KVAs-FBGDrpWXOMSsohzCPQ9Z0D29URL3dW.webp",
+    destaque: true,
+    especificacoes: ["Gerador Trifásico", "MWM", "50 a 200 KVA"],
+  },
+  {
+    id: 46,
+    nome: "Geradores 11 a 18 KVA Mono/Trifásicos Buffalo",
+    categoria: "geradores",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GERADORES%20DE%2011%20A%2018%20KVA%20MONOFASICOS%20E%20TRIFASICOS-28TABPDSWAhqfl1bXmLcoPHfOXCjec.webp",
+    destaque: true,
+    especificacoes: ["Gerador", "Buffalo BFGE 15000", "11 a 18 KVA"],
+  },
+  {
+    id: 47,
+    nome: "Geradores Inverter 2,5 a 9 KVA Buffalo",
+    categoria: "geradores",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GERADORES%20INVERTER%20DE%202%2C5%20A%209%20KVA-bOGfqy45hWkeBwU7QDZdO1QuCyCGjf.webp",
+    destaque: false,
+    especificacoes: ["Gerador Inverter", "Buffalo BFG 2000", "2,5 a 9 KVA"],
   },
 ]
 
