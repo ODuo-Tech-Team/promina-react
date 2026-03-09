@@ -455,6 +455,47 @@ const produtos = [
     destaque: false,
     especificacoes: ["Container", "Almoxarifado", "6 metros"],
   },
+  // FERRAMENTAS ELÉTRICAS
+  {
+    id: 53,
+    nome: "Serra de Bancada DeWalt",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SERRA%20DE%20BANCADA-B3NNod3imzvH85nN097tWETJdOKKaU.png",
+    destaque: true,
+    especificacoes: ["Serra de Bancada", "DeWalt", "1800W"],
+  },
+  {
+    id: 54,
+    nome: "Parafusadeiras DeWalt 12V",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PARAFUSADEIRAS-mRnxgHV4jzZlWWU3z5gp7qDKXKvEGu.webp",
+    destaque: true,
+    especificacoes: ["Parafusadeira", "DeWalt", "12V Max"],
+  },
+  {
+    id: 55,
+    nome: "Esmerilhadeira DeWalt",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ESMERILHADEIRAS-ijkx9QTxBbJ8qmDysB0cgiybj57no6.webp",
+    destaque: false,
+    especificacoes: ["Esmerilhadeira", "DeWalt", "850W"],
+  },
+  {
+    id: 56,
+    nome: "Serra Circular DeWalt 7.1/4\" 1400W",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DWE560-SERRA-CIRCULAR-DEWALT-7-1-4-POL.-1400W-110V-Qp9kDdCfzmD6XPwqH4AwCfjLYy3ZtI.webp",
+    destaque: true,
+    especificacoes: ["Serra Circular", "DeWalt", "7.1/4\" 1400W"],
+  },
+  {
+    id: 57,
+    nome: "Serra Mármore DeWalt",
+    categoria: "ferramentas",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SERRAMARMORE-DXTaS6Ntcvxb6ncmjcj2iaswjsY6oB.webp",
+    destaque: false,
+    especificacoes: ["Serra Mármore", "DeWalt", "1050W"],
+  },
 ]
 
 const ITEMS_PER_PAGE = 12
