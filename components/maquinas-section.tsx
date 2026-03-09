@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { ContactButton } from "@/components/contact-button"
+import { Button } from "@/components/ui/button"
 import { Layers, Hammer, HardHat, ArrowUpFromLine, ArrowRight } from "lucide-react"
 
 const equipamentos = [
@@ -12,6 +13,7 @@ const equipamentos = [
     descricao: "Estruturas metálicas de alta resistência para escoramento e sustentação em obras de todos os portes.",
     icon: Layers,
     itens: ["Andaimes", "Escoras Metálicas", "Escoras de Muro", "Vigas Metálicas"],
+    link: "/maquinas?categoria=tubulacoes",
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const equipamentos = [
     descricao: "Equipamentos elétricos de alta performance para corte, perfuração e acabamento profissional.",
     icon: Hammer,
     itens: ["Martelos Rompedores", "Parafusadeiras", "Serra Circular", "Serra Mármore"],
+    link: "/maquinas?categoria=ferramentas",
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const equipamentos = [
     descricao: "Máquinas pesadas para movimentação de terra, compactação de solo e preparação de terreno.",
     icon: HardHat,
     itens: ["Retroescavadeiras", "Rolo Compactador", "Compactadores", "Placas Vibratórias"],
+    link: "/maquinas?categoria=compactacao",
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const equipamentos = [
     descricao: "Equipamentos para trabalho em altura e soluções modulares para canteiro de obras.",
     icon: ArrowUpFromLine,
     itens: ["Plataformas Articuladas", "Plataformas Tesouras", "Módulos Escritórios", "Containers Almoxarifados"],
+    link: "/maquinas?categoria=elevacao",
   },
 ]
 
@@ -125,18 +130,20 @@ export function MaquinasSection() {
                 </CardContent>
 
                 <CardFooter>
-                  <ContactButton 
+                  <Button
                     variant="outline"
+                    asChild
                     className={`w-full group/btn transition-colors duration-300 ${
                       isDestaque 
                         ? "border-[#FFCC29] text-[#FFCC29] hover:bg-[#FFCC29] hover:text-[#363334]" 
                         : "border-[#363334] text-[#363334] hover:bg-[#FFCC29] hover:border-[#FFCC29] hover:text-[#363334]"
                     }`}
-                    message={`Olá! Gostaria de consultar a disponibilidade de ${equipamento.titulo}.`}
                   >
-                    Consultar Disponibilidade
-                    <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                  </ContactButton>
+                    <Link href={equipamento.link}>
+                      Saiba Mais
+                      <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
                 </CardFooter>
               </Card>
             )

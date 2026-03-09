@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
+import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
@@ -379,10 +380,23 @@ const produtos = [
 const ITEMS_PER_PAGE = 12
 
 export default function MaquinasPage() {
-  const [categoriaAtiva, setCategoriaAtiva] = useState("todos")
+  const searchParams = useSearchParams()
+  const [categoriaAtiva, setCategoriaAtiva] = useState(() => {
+    return searchParams.get("categoria") ?? "todos"
+  })
   const [busca, setBusca] = useState("")
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE)
   const loaderRef = useRef<HTMLDivElement>(null)
+
+  // Sync category from URL params on mount and navigation
+  useEffect(() => {
+    const cat = searchParams.get("categoria")
+    if (cat) {
+      setCategoriaAtiva(cat)
+      setVisibleItems(ITEMS_PER_PAGE)
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }, [searchParams])
 
   const produtosFiltrados = produtos.filter((produto) => {
     const matchCategoria = categoriaAtiva === "todos" || produto.categoria === categoriaAtiva
