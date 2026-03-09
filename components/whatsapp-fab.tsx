@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useRouter } from "next/navigation"
 import { X } from "lucide-react"
 
 const unidades = [
@@ -8,16 +9,22 @@ const unidades = [
     nome: "Locação Campina Grande",
     telefone: "5583987177707",
     descricao: "Andaimes, escoras e equipamentos",
+    obrigadoUrl: "/obrigado/campina-grande",
+    mensagem: "Olá! Vim pelo site e gostaria de mais informações.",
   },
   {
     nome: "Locação João Pessoa",
     telefone: "5583996640032",
     descricao: "Máquinas e equipamentos",
+    obrigadoUrl: "/obrigado/joao-pessoa",
+    mensagem: "Olá! Vim pelo site e gostaria de mais informações.",
   },
   {
     nome: "Home Center Campina Grande",
     telefone: "5583998030018",
     descricao: "Tintas, ferramentas e acabamento",
+    obrigadoUrl: "/obrigado/home-center",
+    mensagem: "Olá! Vim pelo site e gostaria de mais informações sobre o Home Center.",
   },
 ]
 
@@ -27,6 +34,7 @@ export function WhatsAppFAB() {
   const [isOpen, setIsOpen] = useState(false)
   const [isPulsing, setIsPulsing] = useState(true)
   const menuRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -60,9 +68,12 @@ export function WhatsAppFAB() {
     setTimeout(() => setIsPulsing(true), 5000)
   }
 
-  const handleSelectUnidade = (telefone: string) => {
-    const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.")
-    window.open(`https://wa.me/${telefone}?text=${message}`, "_blank")
+  const handleSelectUnidade = (unidade: typeof unidades[0]) => {
+    const message = encodeURIComponent(unidade.mensagem)
+    router.push(unidade.obrigadoUrl)
+    setTimeout(() => {
+      window.open(`https://wa.me/${unidade.telefone}?text=${message}`, "_blank")
+    }, 500)
     setIsOpen(false)
   }
 
@@ -113,7 +124,7 @@ export function WhatsAppFAB() {
           {unidades.map((unidade, index) => (
             <button
               key={unidade.telefone}
-              onClick={() => handleSelectUnidade(unidade.telefone)}
+              onClick={() => handleSelectUnidade(unidade)}
               className={`
                 w-full px-4 py-3 flex items-center gap-3
                 hover:bg-[#FFCC29]/10 transition-colors

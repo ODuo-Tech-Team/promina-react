@@ -10,16 +10,19 @@ const unidades = [
     nome: "Locação Campina Grande",
     telefone: "5583987177707",
     descricao: "Andaimes, escoras e equipamentos",
+    obrigadoUrl: "/obrigado/campina-grande",
   },
   {
     nome: "Locação João Pessoa",
     telefone: "5583996640032",
     descricao: "Máquinas e equipamentos",
+    obrigadoUrl: "/obrigado/joao-pessoa",
   },
   {
     nome: "Home Center Campina Grande",
     telefone: "5583998030018",
     descricao: "Tintas, ferramentas e acabamento",
+    obrigadoUrl: "/obrigado/home-center",
   },
 ]
 
@@ -53,12 +56,12 @@ export function ContactButton({
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
-  const handleSelectUnidade = (telefone: string) => {
+  const handleSelectUnidade = (telefone: string, obrigadoUrl: string) => {
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${telefone}?text=${encodedMessage}`
     
-    // Redireciona para a página de obrigado
-    router.push("/obrigado")
+    // Redireciona para a página de obrigado correta da filial
+    router.push(obrigadoUrl)
     
     // Abre o WhatsApp em uma nova aba após um pequeno delay
     setTimeout(() => {
@@ -113,7 +116,7 @@ export function ContactButton({
           {unidades.map((unidade, index) => (
             <button
               key={unidade.telefone}
-              onClick={() => handleSelectUnidade(unidade.telefone)}
+              onClick={() => handleSelectUnidade(unidade.telefone, unidade.obrigadoUrl)}
               className={`
                 w-full px-4 py-3 flex items-center gap-3
                 hover:bg-[#FFCC29]/10 transition-colors
