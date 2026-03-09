@@ -24,6 +24,7 @@ const categorias = [
   { id: "tubulacoes", nome: "Tubulações e Acessórios" },
   { id: "martelos", nome: "Martelos e Marteletes" },
   { id: "geradores", nome: "Geradores de Energia" },
+  { id: "modulos", nome: "Módulos e Containers" },
 ]
 
 // Produtos disponíveis
@@ -412,6 +413,47 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GERADORES%20INVERTER%20DE%202%2C5%20A%209%20KVA-bOGfqy45hWkeBwU7QDZdO1QuCyCGjf.webp",
     destaque: false,
     especificacoes: ["Gerador Inverter", "Buffalo BFG 2000", "2,5 a 9 KVA"],
+  },
+  // MÓDULOS E CONTAINERS
+  {
+    id: 48,
+    nome: "Módulo Vitrine 3m",
+    categoria: "modulos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mo%CC%81dulo%20Vitrine%203mt%20%282%29-7XrtDheD5CVo5kgx8LEB8m5SkciXpS.png",
+    destaque: true,
+    especificacoes: ["Módulo Vitrine", "3 metros", "Climatizado"],
+  },
+  {
+    id: 49,
+    nome: "Container Almoxarifado 3m",
+    categoria: "modulos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Container%20almoxarife%20de%203mt-YkvoJfGxLzTIOPJMCaaga5vvuMh3A0.png",
+    destaque: true,
+    especificacoes: ["Container", "Almoxarifado", "3 metros"],
+  },
+  {
+    id: 50,
+    nome: "Container Banheiro 3m",
+    categoria: "modulos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Container%20banheiro%203mt-eFHXrIguA3yZNcgnCFQ3Rx80jmQQbp.jpeg",
+    destaque: false,
+    especificacoes: ["Container Banheiro", "Sanitários", "3 metros"],
+  },
+  {
+    id: 51,
+    nome: "Módulo Escritório 6m",
+    categoria: "modulos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mo%CC%81dulo%20escritorio%206mt-p76IGqN6t4UQJlqWw1KusPrXgw4m6X.png",
+    destaque: true,
+    especificacoes: ["Módulo Escritório", "Ar-condicionado", "6 metros"],
+  },
+  {
+    id: 52,
+    nome: "Container Almoxarifado 6m",
+    categoria: "modulos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Almoxarife%20de%206mt-hIwEsNer8L03QwPWpmaQTXjcVFWDu6.png",
+    destaque: false,
+    especificacoes: ["Container", "Almoxarifado", "6 metros"],
   },
 ]
 
