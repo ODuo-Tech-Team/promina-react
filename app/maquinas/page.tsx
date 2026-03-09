@@ -22,6 +22,7 @@ const categorias = [
   { id: "agua", nome: "Água e Esgotamentos" },
   { id: "jardinagem", nome: "Jardinagem" },
   { id: "tubulacoes", nome: "Tubulações e Acessórios" },
+  { id: "martelos", nome: "Martelos e Marteletes" },
 ]
 
 // Produtos disponíveis
@@ -360,6 +361,31 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VIGASMETALICAS-ukfSh0PMSSOil7nCK08Fy6VZeHrvbt.webp",
     destaque: false,
     especificacoes: ["Vigas Metálicas", "Perfil", "Estrutural"],
+  },
+  // MARTELOS E MARTELETES
+  {
+    id: 42,
+    nome: "Marteletes Combinados 2,3 a 4,4 kg Makita",
+    categoria: "martelos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MARTELETES%20COMBINADOS%20DE%202%2C3%20A%204%2C4%20KG-c65IkxhjZrm7J9vEnDpOf3LbogZ3Dz.webp",
+    destaque: true,
+    especificacoes: ["Martelete", "Makita", "2,3 a 4,4 kg"],
+  },
+  {
+    id: 43,
+    nome: "Martelos Rompedores 5 a 12 kg Menegotti",
+    categoria: "martelos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MARTELOS%20ROMPEDORES%20DE%205%20A%2012%20KG-EhW2FlkJoIdEV0sxW8HlNeJSr6V4mB.jpg",
+    destaque: true,
+    especificacoes: ["Martelo Rompedor", "Menegotti", "5 a 12 kg"],
+  },
+  {
+    id: 44,
+    nome: "Martelos Demolidores 16 a 30 kg DeWalt",
+    categoria: "martelos",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MARTELOSDEMOLIDORES%20DE%2016%20A%2030%20KG-JfGwkEoCWiHeHXUGczh0Oakpl8nBgA.png",
+    destaque: false,
+    especificacoes: ["Martelo Demolidor", "DeWalt", "16 a 30 kg"],
   },
 ]
 
