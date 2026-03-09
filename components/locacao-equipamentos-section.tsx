@@ -22,77 +22,65 @@ import {
 
 const equipamentos = [
   {
-    icon: Layers,
-    title: "Andaimes",
-    description: "Estruturas metálicas seguras para trabalho em altura",
-    quantidade: "+4 modelos"
-  },
-  {
-    icon: Layers,
-    title: "Escoras",
-    description: "Escoras metálicas de alta resistência para sustentação",
-    quantidade: "+4 modelos"
-  },
-  {
-    icon: Hammer,
-    title: "Marteletes",
-    description: "Equipamentos de demolição e perfuração de alta potência",
-    quantidade: "+4 modelos"
-  },
-  {
-    icon: HardHat,
-    title: "Betoneiras",
-    description: "Preparo de concreto com eficiência e qualidade",
+    icon: Zap,
+    title: "Água e Esgotamentos",
+    description: "Lavajatos, bombas submersas e equipamentos hidráulicos",
     quantidade: "+4 modelos"
   },
   {
     icon: Cog,
-    title: "Compactadores",
-    description: "Compactação de solo para fundações e pavimentação",
-    quantidade: "+4 modelos"
+    title: "Compactação e Terraplanagem",
+    description: "Retroescavadeiras, rolos compactadores e mini escavadeiras",
+    quantidade: "+5 modelos"
   },
   {
-    icon: Wrench,
-    title: "Furadeiras",
-    description: "Furadeiras industriais para perfuração profissional",
-    quantidade: "+3 modelos"
+    icon: HardHat,
+    title: "Concretagem",
+    description: "Betoneiras, vibradores, cortadoras e alisadoras de piso",
+    quantidade: "+6 modelos"
   },
   {
     icon: ArrowUpFromLine,
-    title: "Plataformas Elevatórias",
-    description: "Trabalho em altura com segurança e estabilidade",
-    quantidade: "+4 modelos"
+    title: "Elevação de Carga e Pessoas",
+    description: "Plataformas articuladas, tesouras, empilhadeiras e muncks",
+    quantidade: "+6 modelos"
+  },
+  {
+    icon: Wrench,
+    title: "Ferramentas Elétricas",
+    description: "Serras, parafusadeiras, esmerilhadeiras e mais",
+    quantidade: "+5 modelos"
   },
   {
     icon: Zap,
     title: "Geradores de Energia",
-    description: "Geradores de pequeno e grande porte para obras",
-    quantidade: "Diversos"
+    description: "Geradores inverter, monofásicos, trifásicos e a diesel",
+    quantidade: "+3 modelos"
   },
   {
     icon: Wind,
-    title: "Compressores",
-    description: "Compressores de ar para ferramentas pneumáticas",
-    quantidade: "Diversos"
+    title: "Jardinagem",
+    description: "Motosserras, roçadeiras, sopradores e aparadores",
+    quantidade: "+4 modelos"
   },
   {
-    icon: Truck,
-    title: "Empilhadeiras",
-    description: "Movimentação de cargas pesadas com precisão",
-    quantidade: "+1 modelo"
+    icon: Hammer,
+    title: "Martelos e Marteletes",
+    description: "Marteletes combinados, rompedores e demolidores",
+    quantidade: "+3 modelos"
   },
   {
     icon: Container,
-    title: "Contêineres",
-    description: "Escritório, banheiro e almoxarifado para canteiro de obras",
-    quantidade: "+1 modelo"
+    title: "Módulos e Containers",
+    description: "Escritório, banheiro, vitrine e almoxarifado modular",
+    quantidade: "+5 modelos"
   },
   {
     icon: Shovel,
-    title: "Ferramentas Elétricas",
-    description: "Equipamentos de pequeno porte para diversas aplicações",
-    quantidade: "Diversos"
-  }
+    title: "Tubulações e Acessórios",
+    description: "Andaimes, escoras, vigas metálicas e cruzetas",
+    quantidade: "+6 modelos"
+  },
 ]
 
 const beneficios = [
