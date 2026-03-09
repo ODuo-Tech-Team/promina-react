@@ -20,6 +20,7 @@ const categorias = [
   { id: "compactacao", nome: "Compactação e Terraplanagem" },
   { id: "plataformas", nome: "Plataformas e Containers" },
   { id: "agua", nome: "Água e Esgotamentos" },
+  { id: "jardinagem", nome: "Jardinagem" },
 ]
 
 // Produtos disponíveis
@@ -276,6 +277,39 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BOMBAS%20SUBMERSIVEIS-0kcFOOXW8mi1e7j8FDPj2734ktWUIn.jpg",
     destaque: true,
     especificacoes: ["Bomba Submersível", "Schneider", "Esgotamento"],
+  },
+  // JARDINAGEM
+  {
+    id: 32,
+    nome: "Motosserra a Bateria DeWalt",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MOTOSSERRAS%20A%20BATERIA-xZzRanxNxKQYIoZv6Q6YBnzeUh4TiP.png",
+    destaque: true,
+    especificacoes: ["Motosserra", "DeWalt", "60V FlexVolt"],
+  },
+  {
+    id: 33,
+    nome: "Roçadeira a Bateria e a Gasolina Makita",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ROC%CC%A7ADEIRAS%20A%20BATERIA%20E%20A%20GASOLINA-uohoXsff5v433wFZ6TmfTX5YWn5s0K.png",
+    destaque: true,
+    especificacoes: ["Roçadeira", "Makita", "18V Bateria"],
+  },
+  {
+    id: 34,
+    nome: "Soprador e Aspirador a Bateria Makita",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SOPRADORES%20E%20ASPIRADORES%20A%20GASOLINA%20E%20A%20BATERIA-KOW1h6yjO7tH1TxFpjwUWcTUEzKNsh.png",
+    destaque: false,
+    especificacoes: ["Soprador", "Makita", "36V Brushless"],
+  },
+  {
+    id: 35,
+    nome: "Aparador de Cerca Viva Makita",
+    categoria: "jardinagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/APARADORES%20DE%20CERCA%20VIVA%20ELETRICOS%20E%20A%20BATERIA-vfM7iUt85rKjGsjNl8RuF4jZ7Jbu3C.png",
+    destaque: false,
+    especificacoes: ["Aparador Cerca Viva", "Makita", "18V Bateria"],
   },
 ]
 
