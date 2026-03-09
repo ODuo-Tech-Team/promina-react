@@ -21,6 +21,7 @@ const categorias = [
   { id: "plataformas", nome: "Plataformas e Containers" },
   { id: "agua", nome: "Água e Esgotamentos" },
   { id: "jardinagem", nome: "Jardinagem" },
+  { id: "tubulacoes", nome: "Tubulações e Acessórios" },
 ]
 
 // Produtos disponíveis
@@ -310,6 +311,55 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/APARADORES%20DE%20CERCA%20VIVA%20ELETRICOS%20E%20A%20BATERIA-vfM7iUt85rKjGsjNl8RuF4jZ7Jbu3C.png",
     destaque: false,
     especificacoes: ["Aparador Cerca Viva", "Makita", "18V Bateria"],
+  },
+  // TUBULAÇÕES E ACESSÓRIOS
+  {
+    id: 36,
+    nome: "Painéis de Escoramento",
+    categoria: "tubulacoes",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PAINEIS%20DE%20ESCORAMENTO-Kc3hVYESRjMEkDisrERLKjV16hAQlA.webp",
+    destaque: true,
+    especificacoes: ["Painéis", "Escoramento", "Modular"],
+  },
+  {
+    id: 37,
+    nome: "Andaimes Tubulares",
+    categoria: "tubulacoes",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ANDAIMES-OoCZJbh5YMhaGEm1YXVxh3ClsV9mQt.jpg",
+    destaque: true,
+    especificacoes: ["Andaimes", "Tubular", "Modular"],
+  },
+  {
+    id: 38,
+    nome: "Escora de Muro",
+    categoria: "tubulacoes",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ESCORADEMURO-KYYlC36z19Y349QzuigcsGiiRmYEie.png",
+    destaque: false,
+    especificacoes: ["Escora de Muro", "Regulável", "Metálica"],
+  },
+  {
+    id: 39,
+    nome: "Cruzetas Metálicas",
+    categoria: "tubulacoes",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CRUZETAS%20METALICAS-WlHYLaJ3sXfkRgLnpGA6sN8ysdtjYU.jpg",
+    destaque: false,
+    especificacoes: ["Cruzetas", "Metálicas", "Acessório"],
+  },
+  {
+    id: 40,
+    nome: "Escoras Metálicas Reguláveis",
+    categoria: "tubulacoes",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ESCORAS-dN77oarPGLlgusuWtOlR2WI06CgPiJ.png",
+    destaque: true,
+    especificacoes: ["Escoras", "Metálicas", "Regulável"],
+  },
+  {
+    id: 41,
+    nome: "Vigas Metálicas",
+    categoria: "tubulacoes",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VIGASMETALICAS-ukfSh0PMSSOil7nCK08Fy6VZeHrvbt.webp",
+    destaque: false,
+    especificacoes: ["Vigas Metálicas", "Perfil", "Estrutural"],
   },
 ]
 
