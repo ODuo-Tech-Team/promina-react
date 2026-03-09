@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { ContactButton } from "@/components/contact-button"
 import { Layers, Hammer, HardHat, ArrowUpFromLine, ArrowRight } from "lucide-react"
 
 const equipamentos = [
