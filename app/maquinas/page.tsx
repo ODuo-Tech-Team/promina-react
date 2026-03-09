@@ -26,6 +26,7 @@ const categorias = [
   { id: "geradores", nome: "Geradores de Energia" },
   { id: "modulos", nome: "Módulos e Containers" },
   { id: "elevacao", nome: "Elevação de Carga e Pessoas" },
+  { id: "concretagem", nome: "Concretagem" },
 ]
 
 // Produtos disponíveis
@@ -545,6 +546,55 @@ const produtos = [
     imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLATAFORMA%20ARTICULADA%2028%20METROS-sSG9Zb2VY8dUIw9LlOCFaudDMkZipa.jpg",
     destaque: true,
     especificacoes: ["Plataforma Articulada", "SkyJack SJ85 AJ", "28 metros"],
+  },
+  // CONCRETAGEM
+  {
+    id: 64,
+    nome: "Forma Plástica para Pilares Planex",
+    categoria: "concretagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Planex.jpg.jpeg-uuSatCEygiATwq5tUfB30xPQlbDhnj.webp",
+    destaque: true,
+    especificacoes: ["Forma Plástica", "Planex", "Pilares"],
+  },
+  {
+    id: 65,
+    nome: "Betoneira Elétrica ou a Gasolina Menegotti Infinity 400",
+    categoria: "concretagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BETONEIRAS%20ELE%CC%81TRICAS%20OU%20A%20GASOLINA-uzWX1aiDb6bilDG5LPHgdb9my7g2J1.jpg",
+    destaque: true,
+    especificacoes: ["Betoneira", "Menegotti Infinity 400", "Elétrica/Gasolina"],
+  },
+  {
+    id: 66,
+    nome: "Cortadora de Piso Vibromak CPV-350",
+    categoria: "concretagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CORTADORAS%20DE%20PISO-tnknaX1HS6RpU1DaA5lszsNxhW5rvJ.png",
+    destaque: true,
+    especificacoes: ["Cortadora de Piso", "Vibromak CPV-350", "Gasolina"],
+  },
+  {
+    id: 67,
+    nome: "Vibrador de Concreto Lynus LMP-1500",
+    categoria: "concretagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VIBRADORES%20DE%20CONCRETO-r9Nm9KKH8zoZ5Oti42bbAgySIzBo53.webp",
+    destaque: false,
+    especificacoes: ["Vibrador de Concreto", "Lynus LMP-1500", "1500W"],
+  },
+  {
+    id: 68,
+    nome: "Régua Vibratória para Concreto",
+    categoria: "concretagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/REGUAS%20VIBRATORIAS.jfif-D5PO0JhF5W0BHd5FIBfgi4Qj5MWdDX.jpeg",
+    destaque: false,
+    especificacoes: ["Régua Vibratória", "Concreto", "Nivelamento"],
+  },
+  {
+    id: 69,
+    nome: "Alisadora de Piso Buffalo",
+    categoria: "concretagem",
+    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ALISADORA%20DE%20PISO-NNLhfpHnXfZ87nEpTRdpILHXH2Nvfz.webp",
+    destaque: true,
+    especificacoes: ["Alisadora de Piso", "Buffalo", "Gasolina"],
   },
 ]
 
