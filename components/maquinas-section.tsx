@@ -8,31 +8,31 @@ import { Layers, Hammer, HardHat, ArrowUpFromLine, ArrowRight } from "lucide-rea
 const equipamentos = [
   {
     id: 1,
-    titulo: "Andaimes e Escoras",
-    descricao: "Estruturas metálicas de alta resistência para obras de todos os portes. Montagem e desmontagem inclusa.",
+    titulo: "Tubulações e Acessórios",
+    descricao: "Estruturas metálicas de alta resistência para escoramento e sustentação em obras de todos os portes.",
     icon: Layers,
-    itens: ["Andaime tubular", "Escora metálica", "Quadro de andaime", "Torres"],
+    itens: ["Andaimes", "Escoras Metálicas", "Escoras de Muro", "Vigas Metálicas"],
   },
   {
     id: 2,
-    titulo: "Marteletes e Furadeiras",
-    descricao: "Equipamentos elétricos e pneumáticos para demolição, perfuração e acabamento de alta precisão.",
+    titulo: "Ferramentas Elétricas",
+    descricao: "Equipamentos elétricos de alta performance para corte, perfuração e acabamento profissional.",
     icon: Hammer,
-    itens: ["Martelete rompedor", "Furadeira industrial", "Perfuratriz", "Parafusadeira"],
+    itens: ["Martelos Rompedores", "Parafusadeiras", "Serra Circular", "Serra Mármore"],
   },
   {
     id: 3,
-    titulo: "Betoneiras e Compactadores",
-    descricao: "Máquinas para preparo e aplicação de concreto, além de compactação de solo e asfalto.",
+    titulo: "Compactação e Terraplanagem",
+    descricao: "Máquinas pesadas para movimentação de terra, compactação de solo e preparação de terreno.",
     icon: HardHat,
-    itens: ["Betoneira 400L", "Compactador de solo", "Vibrador de concreto", "Alisadora"],
+    itens: ["Retroescavadeiras", "Rolo Compactador", "Compactadores", "Placas Vibratórias"],
   },
   {
     id: 4,
-    titulo: "Plataformas Elevatórias",
-    descricao: "Equipamentos para trabalho em altura com segurança. Ideais para manutenção e instalações.",
+    titulo: "Plataformas e Containers",
+    descricao: "Equipamentos para trabalho em altura e soluções modulares para canteiro de obras.",
     icon: ArrowUpFromLine,
-    itens: ["Plataforma tesoura", "Plataforma articulada", "Andaime suspenso", "Cadeira suspensa"],
+    itens: ["Plataformas Articuladas", "Plataformas Tesouras", "Módulos Escritórios", "Containers Almoxarifados"],
   },
 ]
 
