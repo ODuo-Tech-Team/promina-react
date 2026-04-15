@@ -23,7 +23,7 @@ const localizacoes = [
     id: 2,
     tipo: "Locação",
     nome: "Locação João Pessoa",
-    endereco: "Av. Pres. Epitácio Pessoa, 2987, Estados, João Pessoa - PB",
+    endereco: "Av. Pres. Epitácio Pessoa, 2991, Estados, João Pessoa - PB",
     telefone: "+55 83 99664-0032",
     telefoneFixo: "(83) 2178-5766",
     whatsapp: "5583996640032",

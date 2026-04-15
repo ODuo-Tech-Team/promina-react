@@ -8,7 +8,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppFAB } from "@/components/whatsapp-fab"
 import { ContactButton } from "@/components/contact-button"
-import { Search, ArrowLeft, CheckCircle2, Loader2 } from "lucide-react"
+import { Search, ArrowLeft, CheckCircle2, Loader2, ChevronRight, X, SlidersHorizontal } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
@@ -443,6 +443,7 @@ function MaquinasContent() {
   })
   const [busca, setBusca] = useState("")
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const loaderRef = useRef<HTMLDivElement>(null)
 
   // Sync category from URL params on mount and navigation
@@ -455,14 +456,31 @@ function MaquinasContent() {
     }
   }, [searchParams])
 
-  const produtosFiltrados = produtos.filter((produto) => {
-    const matchCategoria = categoriaAtiva === "todos" || produto.categoria === categoriaAtiva
-    const matchBusca = produto.nome.toLowerCase().includes(busca.toLowerCase())
-    return matchCategoria && matchBusca
-  })
+  const produtosFiltrados = produtos
+    .filter((produto) => {
+      const matchCategoria = categoriaAtiva === "todos" || produto.categoria === categoriaAtiva
+      const matchBusca = produto.nome.toLowerCase().includes(busca.toLowerCase())
+      return matchCategoria && matchBusca
+    })
+    .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
 
   const produtosVisiveis = produtosFiltrados.slice(0, visibleItems)
   const hasMore = visibleItems < produtosFiltrados.length
+
+  const handleCategoriaClick = (categoriaId: string) => {
+    setCategoriaAtiva(categoriaId)
+    setSidebarOpen(false)
+  }
+
+  // Contagem de produtos por categoria
+  const contagemPorCategoria = categorias.reduce((acc, cat) => {
+    if (cat.id === "todos") {
+      acc[cat.id] = produtos.length
+    } else {
+      acc[cat.id] = produtos.filter(p => p.categoria === cat.id).length
+    }
+    return acc
+  }, {} as Record<string, number>)
 
   // Reset visible items when filter changes
   useEffect(() => {
@@ -537,144 +555,229 @@ function MaquinasContent() {
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="py-8 bg-white border-b border-gray-200 sticky top-[88px] md:top-[136px] z-40">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
-            {/* Search */}
-            <div className="relative w-full lg:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-gray-400" />
-              <Input
-                type="text"
-                placeholder="Buscar equipamento..."
-                value={busca}
-                onChange={(e) => setBusca(e.target.value)}
-                className="pl-10 bg-gray-50 border-gray-200 focus:border-[#FFCC29] focus:ring-[#FFCC29]"
-              />
-            </div>
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-50 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
-            {/* Categories */}
-            <div className="flex gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
-              {categorias.map((categoria) => (
-                <button
-                  key={categoria.id}
-                  onClick={() => setCategoriaAtiva(categoria.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                    categoriaAtiva === categoria.id
-                      ? "bg-[#FFCC29] text-[#363334]"
-                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                  }`}
-                >
-                  {categoria.nome}
-                </button>
-              ))}
-            </div>
+      {/* Mobile Sidebar */}
+      <aside className={`fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
+        sidebarOpen ? "translate-x-0" : "-translate-x-full"
+      }`}>
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between p-4 border-b border-gray-200">
+            <h2 className="font-bold text-lg text-[#363334]">Categorias</h2>
+            <button 
+              onClick={() => setSidebarOpen(false)}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <X className="size-5 text-gray-600" />
+            </button>
           </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          {/* Results count */}
-          <p className="text-gray-600 mb-6">
-            {produtosFiltrados.length} equipamento{produtosFiltrados.length !== 1 ? "s" : ""} encontrado{produtosFiltrados.length !== 1 ? "s" : ""}
-          </p>
-
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {produtosVisiveis.map((produto) => (
-              <div
-                key={produto.id}
-                className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border ${
-                  produto.destaque ? "border-[#FFCC29]" : "border-gray-100"
+          <nav className="flex-1 overflow-y-auto py-2">
+            {categorias.map((categoria) => (
+              <button
+                key={categoria.id}
+                onClick={() => handleCategoriaClick(categoria.id)}
+                className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${
+                  categoriaAtiva === categoria.id
+                    ? "bg-[#FFCC29]/10 text-[#363334] border-l-4 border-[#FFCC29]"
+                    : "text-gray-600 hover:bg-gray-50 border-l-4 border-transparent"
                 }`}
               >
-                {/* Image */}
-                <div className="relative aspect-square bg-gray-50 overflow-hidden">
-                  {produto.destaque && (
-                    <div className="absolute top-3 left-3 z-10 bg-[#FFCC29] text-[#363334] px-3 py-1 rounded-full text-xs font-bold">
-                      Destaque
-                    </div>
-                  )}
-                  <Image
-                    src={produto.imagem}
-                    alt={produto.nome}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    quality={75}
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                <span className="font-medium">{categoria.nome}</span>
+                <span className={`text-sm px-2 py-0.5 rounded-full ${
+                  categoriaAtiva === categoria.id
+                    ? "bg-[#FFCC29] text-[#363334]"
+                    : "bg-gray-100 text-gray-500"
+                }`}>
+                  {contagemPorCategoria[categoria.id]}
+                </span>
+              </button>
+            ))}
+          </nav>
+        </div>
+      </aside>
+
+      {/* Main Content with Sidebar */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex gap-8">
+            {/* Desktop Sidebar */}
+            <aside className="hidden lg:block w-64 shrink-0">
+              <div className="sticky top-[160px] bg-white rounded-xl border border-gray-200 overflow-hidden">
+                <div className="p-4 bg-[#363334]">
+                  <h2 className="font-bold text-white">Categorias</h2>
+                </div>
+                <nav className="py-2">
+                  {categorias.map((categoria) => (
+                    <button
+                      key={categoria.id}
+                      onClick={() => handleCategoriaClick(categoria.id)}
+                      className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${
+                        categoriaAtiva === categoria.id
+                          ? "bg-[#FFCC29]/10 text-[#363334] border-l-4 border-[#FFCC29]"
+                          : "text-gray-600 hover:bg-gray-50 border-l-4 border-transparent"
+                      }`}
+                    >
+                      <span className="font-medium text-sm">{categoria.nome}</span>
+                      <span className={`text-xs px-2 py-0.5 rounded-full ${
+                        categoriaAtiva === categoria.id
+                          ? "bg-[#FFCC29] text-[#363334]"
+                          : "bg-gray-100 text-gray-500"
+                      }`}>
+                        {contagemPorCategoria[categoria.id]}
+                      </span>
+                    </button>
+                  ))}
+                </nav>
+              </div>
+            </aside>
+
+            {/* Products Area */}
+            <div className="flex-1 min-w-0">
+              {/* Search and Mobile Filter Button */}
+              <div className="flex gap-3 mb-6">
+                <button
+                  onClick={() => setSidebarOpen(true)}
+                  className="lg:hidden flex items-center gap-2 px-4 py-2.5 bg-[#363334] text-white rounded-lg font-medium shrink-0"
+                >
+                  <SlidersHorizontal className="size-5" />
+                  <span>Filtros</span>
+                </button>
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-gray-400" />
+                  <Input
+                    type="text"
+                    placeholder="Buscar equipamento..."
+                    value={busca}
+                    onChange={(e) => setBusca(e.target.value)}
+                    className="pl-10 bg-white border-gray-200 focus:border-[#FFCC29] focus:ring-[#FFCC29]"
                   />
                 </div>
+              </div>
 
-                {/* Content */}
-                <div className="p-4">
-                  {/* Category */}
-                  <p className="text-xs text-[#FFCC29] font-semibold uppercase tracking-wide mb-1">
-                    {categorias.find((c) => c.id === produto.categoria)?.nome}
-                  </p>
-
-                  {/* Name */}
-                  <h3 className="font-bold text-[#363334] text-lg mb-3 line-clamp-2 min-h-[56px]">
-                    {produto.nome}
-                  </h3>
-
-                  {/* Specs */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {produto.especificacoes.map((spec, index) => (
-                      <span
-                        key={index}
-                        className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded"
-                      >
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* CTA Button */}
-                  <ContactButton
-                    className="w-full bg-[#363334] hover:bg-[#FFCC29] hover:text-[#363334] text-white font-semibold transition-colors"
-                    message={`Olá! Gostaria de verificar disponibilidade e orçamento para: ${produto.nome}`}
-                  >
-                    Verificar disponibilidade
-                  </ContactButton>
+              {/* Active Category Badge */}
+              {categoriaAtiva !== "todos" && (
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-sm text-gray-500">Categoria:</span>
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-[#FFCC29] text-[#363334] rounded-full text-sm font-medium">
+                    {categorias.find(c => c.id === categoriaAtiva)?.nome}
+                    <button 
+                      onClick={() => setCategoriaAtiva("todos")}
+                      className="ml-1 hover:bg-[#363334]/10 rounded-full p-0.5"
+                    >
+                      <X className="size-3" />
+                    </button>
+                  </span>
                 </div>
-              </div>
-            ))}
-          </div>
+              )}
 
-          {/* Infinite scroll loader */}
-          {hasMore && (
-            <div ref={loaderRef} className="col-span-full flex justify-center py-8">
-              <div className="flex items-center gap-3 text-gray-500">
-                <div className="w-6 h-6 border-2 border-[#FFCC29] border-t-transparent rounded-full animate-spin" />
-                <span>Carregando mais equipamentos...</span>
-              </div>
-            </div>
-          )}
-
-          {/* No results */}
-          {produtosFiltrados.length === 0 && (
-            <div className="text-center py-16">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
-                Nenhum equipamento encontrado
-              </h3>
+              {/* Results count */}
               <p className="text-gray-600 mb-6">
-                Tente buscar por outro termo ou selecione outra categoria
+                {produtosFiltrados.length} equipamento{produtosFiltrados.length !== 1 ? "s" : ""} encontrado{produtosFiltrados.length !== 1 ? "s" : ""}
+                <span className="text-gray-400 text-sm ml-2">(ordenados de A-Z)</span>
               </p>
-              <Button
-                onClick={() => {
-                  setBusca("")
-                  setCategoriaAtiva("todos")
-                }}
-                className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90"
-              >
-                Limpar filtros
-              </Button>
+
+              {/* Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {produtosVisiveis.map((produto) => (
+                  <div
+                    key={produto.id}
+                    className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border ${
+                      produto.destaque ? "border-[#FFCC29]" : "border-gray-100"
+                    }`}
+                  >
+                    {/* Image */}
+                    <div className="relative aspect-square bg-gray-50 overflow-hidden">
+                      {produto.destaque && (
+                        <div className="absolute top-3 left-3 z-10 bg-[#FFCC29] text-[#363334] px-3 py-1 rounded-full text-xs font-bold">
+                          Destaque
+                        </div>
+                      )}
+                      <Image
+                        src={produto.imagem}
+                        alt={produto.nome}
+                        fill
+                        loading="lazy"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        quality={75}
+                        className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-4">
+                      {/* Category */}
+                      <p className="text-xs text-[#FFCC29] font-semibold uppercase tracking-wide mb-1">
+                        {categorias.find((c) => c.id === produto.categoria)?.nome}
+                      </p>
+
+                      {/* Name */}
+                      <h3 className="font-bold text-[#363334] text-lg mb-3 line-clamp-2 min-h-[56px]">
+                        {produto.nome}
+                      </h3>
+
+                      {/* Specs */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {produto.especificacoes.map((spec, index) => (
+                          <span
+                            key={index}
+                            className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded"
+                          >
+                            {spec}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* CTA Button */}
+                      <ContactButton
+                        className="w-full bg-[#363334] hover:bg-[#FFCC29] hover:text-[#363334] text-white font-semibold transition-colors"
+                        message={`Olá! Gostaria de verificar disponibilidade e orçamento para: ${produto.nome}`}
+                      >
+                        Verificar disponibilidade
+                      </ContactButton>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Infinite scroll loader */}
+              {hasMore && (
+                <div ref={loaderRef} className="col-span-full flex justify-center py-8">
+                  <div className="flex items-center gap-3 text-gray-500">
+                    <div className="w-6 h-6 border-2 border-[#FFCC29] border-t-transparent rounded-full animate-spin" />
+                    <span>Carregando mais equipamentos...</span>
+                  </div>
+                </div>
+              )}
+
+              {/* No results */}
+              {produtosFiltrados.length === 0 && (
+                <div className="text-center py-16">
+                  <div className="text-6xl mb-4">🔍</div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    Nenhum equipamento encontrado
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Tente buscar por outro termo ou selecione outra categoria
+                  </p>
+                  <Button
+                    onClick={() => {
+                      setBusca("")
+                      setCategoriaAtiva("todos")
+                    }}
+                    className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90"
+                  >
+                    Limpar filtros
+                  </Button>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </section>
 

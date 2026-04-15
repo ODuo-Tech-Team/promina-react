@@ -12,7 +12,7 @@ const lojas = [
   },
   {
     nome: "Locação João Pessoa",
-    endereco: "Av. Pres. Epitácio Pessoa, 2987, Estados - João Pessoa",
+    endereco: "Av. Pres. Epitácio Pessoa, 2991, Estados - João Pessoa",
     telefoneFixo: "(83) 2178-5766",
     telefone: "(83) 99664-0032",
     horario: "Seg-Sex: 07:00 às 17:30",

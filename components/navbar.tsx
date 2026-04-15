@@ -26,7 +26,7 @@ const enderecos = [
   },
   {
     nome: "Locação JP",
-    endereco: "Av. Pres. Epitácio Pessoa, 2987, Estados - João Pessoa",
+    endereco: "Av. Pres. Epitácio Pessoa, 2991, Estados - João Pessoa",
     telefone: "(83) 99664-0032",
     whatsapp: "5583996640032",
     mapaUrl: "https://maps.app.goo.gl/13u6UD72TjYrG7DN6",

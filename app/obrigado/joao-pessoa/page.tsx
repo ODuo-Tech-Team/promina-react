@@ -67,7 +67,7 @@ export default function ObrigadoJoaoPessoaPage() {
 
           <p className="text-[#6B6B6B] text-lg mb-8 leading-relaxed">
             Você será redirecionado para o WhatsApp da unidade de João Pessoa.
-            Nossa equipe está pronta para atendê-lo com agilidade.
+            Nossa equipe está pronta para atendê-lo com agilidade e profissionalismo.
           </p>
 
           <div className="bg-white rounded-2xl p-6 shadow-lg mb-8 text-left space-y-4">
@@ -75,7 +75,7 @@ export default function ObrigadoJoaoPessoaPage() {
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#FFCC29] mt-0.5 shrink-0" />
               <p className="text-[#363334] text-sm leading-relaxed">
-                Av. Pres. Epitácio Pessoa, 2987, Estados, João Pessoa - PB
+                Av. Pres. Epitácio Pessoa, 2991, Estados, João Pessoa - PB
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ export default function ObrigadoJoaoPessoaPage() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <p className="text-sm text-[#6B6B6B] mb-4">Confie em quem tem experiência</p>
+            <p className="text-sm text-[#6B6B6B] mb-4">Confie em quem tem experiência!</p>
             <div className="flex items-center justify-center gap-6 text-[#363334]">
               <div className="text-center">
                 <div className="text-2xl font-bold text-[#FFCC29]">15+</div>
@@ -122,7 +122,7 @@ export default function ObrigadoJoaoPessoaPage() {
               <div className="w-px h-8 bg-gray-300" />
               <div className="text-center">
                 <div className="text-2xl font-bold text-[#FFCC29]">4.9</div>
-                <div className="text-xs text-[#6B6B6B]">Avaliação</div>
+                <div className="text-xs text-[#6B6B6B]">Avaliação no Google</div>
               </div>
             </div>
           </div>
