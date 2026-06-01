@@ -33,7 +33,6 @@ interface ContactButtonProps {
   size?: "default" | "sm" | "lg"
   message?: string
   directPhone?: string
-  directObrigadoUrl?: string
 }
 
 export function ContactButton({
@@ -43,7 +42,6 @@ export function ContactButton({
   size = "default",
   message = "Olá! Vim pelo site e gostaria de mais informações.",
   directPhone,
-  directObrigadoUrl,
 }: ContactButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -75,25 +73,11 @@ export function ContactButton({
     setIsOpen(false)
   }
 
-  const handleDirectClick = () => {
-    if (!directPhone) return
-    const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/${directPhone}?text=${encodedMessage}`
-    router.push(directObrigadoUrl ?? "/obrigado")
-    setTimeout(() => {
-      window.open(whatsappUrl, "_blank")
-    }, 500)
-  }
-
   if (directPhone) {
+    const whatsappUrl = `https://wa.me/${directPhone}?text=${encodeURIComponent(message)}`
     return (
-      <Button
-        variant={variant}
-        size={size}
-        onClick={handleDirectClick}
-        className={className}
-      >
-        {children}
+      <Button asChild variant={variant} size={size} className={className}>
+        <a href={whatsappUrl}>{children}</a>
       </Button>
     )
   }
