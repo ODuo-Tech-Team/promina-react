@@ -197,6 +197,7 @@ export default function ContainersPage() {
                   size="lg"
                   className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-lg h-14 px-8"
                   message="Olá! Gostaria de um orçamento para locação de container/módulo."
+                  directPhone="558398620016"
                 >
                   Solicitar Orçamento
                   <ArrowRight className="size-5 ml-2" />
@@ -308,6 +309,7 @@ export default function ContainersPage() {
                   <ContactButton
                     className="w-full bg-[#363334] hover:bg-[#FFCC29] hover:text-[#363334] text-white font-semibold transition-colors mt-auto"
                     message={`Olá! Gostaria de um orçamento para locação do ${m.nome}.`}
+                    directPhone="558398620016"
                   >
                     Verificar disponibilidade
                   </ContactButton>
@@ -403,6 +405,7 @@ export default function ContainersPage() {
             size="lg"
             className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-lg h-14 px-10"
             message="Olá! Preciso de containers/módulos para minha obra. Podem montar um orçamento?"
+            directPhone="558398620016"
           >
             Solicitar Orçamento pelo WhatsApp
             <ArrowRight className="size-5 ml-2" />
@@ -411,7 +414,10 @@ export default function ContainersPage() {
       </section>
 
       <Footer />
-      <WhatsAppFAB />
+      <WhatsAppFAB
+        directPhone="558398620016"
+        directMessage="Olá! Vim pela página de containers/módulos e gostaria de mais informações."
+      />
     </main>
   )
 }

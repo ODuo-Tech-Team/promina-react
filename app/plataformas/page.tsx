@@ -160,6 +160,7 @@ export default function PlataformasPage() {
                   size="lg"
                   className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-lg h-14 px-8"
                   message="Olá! Gostaria de um orçamento para locação de plataforma elevatória."
+                  directPhone="558398620016"
                 >
                   Solicitar Orçamento
                   <ArrowRight className="size-5 ml-2" />
@@ -271,6 +272,7 @@ export default function PlataformasPage() {
                   <ContactButton
                     className="w-full bg-[#363334] hover:bg-[#FFCC29] hover:text-[#363334] text-white font-semibold transition-colors mt-auto"
                     message={`Olá! Gostaria de um orçamento para locação da ${m.nome}.`}
+                    directPhone="558398620016"
                   >
                     Verificar disponibilidade
                   </ContactButton>
@@ -310,6 +312,7 @@ export default function PlataformasPage() {
                 size="lg"
                 className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold"
                 message="Olá! Tenho uma obra que precisa de plataforma elevatória. Pode me ajudar a escolher o modelo?"
+                directPhone="558398620016"
               >
                 Conversar com Especialista
                 <ArrowRight className="size-5 ml-2" />
@@ -377,6 +380,7 @@ export default function PlataformasPage() {
             size="lg"
             className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-lg h-14 px-10"
             message="Olá! Preciso urgente de uma plataforma elevatória. Podem me ajudar?"
+            directPhone="558398620016"
           >
             Solicitar Orçamento pelo WhatsApp
             <ArrowRight className="size-5 ml-2" />
@@ -385,7 +389,10 @@ export default function PlataformasPage() {
       </section>
 
       <Footer />
-      <WhatsAppFAB />
+      <WhatsAppFAB
+        directPhone="558398620016"
+        directMessage="Olá! Vim pela página de plataformas elevatórias e gostaria de mais informações."
+      />
     </main>
   )
 }

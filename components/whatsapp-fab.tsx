@@ -28,7 +28,13 @@ const unidades = [
   },
 ]
 
-export function WhatsAppFAB() {
+interface WhatsAppFABProps {
+  directPhone?: string
+  directMessage?: string
+  directObrigadoUrl?: string
+}
+
+export function WhatsAppFAB({ directPhone, directMessage, directObrigadoUrl }: WhatsAppFABProps = {}) {
   const [mounted, setMounted] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -63,6 +69,16 @@ export function WhatsAppFAB() {
   if (!mounted) return null
 
   const handleToggle = () => {
+    if (directPhone) {
+      const msg = encodeURIComponent(directMessage ?? "Olá! Vim pelo site e gostaria de mais informações.")
+      router.push(directObrigadoUrl ?? "/obrigado")
+      setTimeout(() => {
+        window.open(`https://wa.me/${directPhone}?text=${msg}`, "_blank")
+      }, 500)
+      setIsPulsing(false)
+      setTimeout(() => setIsPulsing(true), 5000)
+      return
+    }
     setIsOpen(!isOpen)
     setIsPulsing(false)
     setTimeout(() => setIsPulsing(true), 5000)
@@ -87,14 +103,15 @@ export function WhatsAppFAB() {
       `}
     >
       {/* Menu de Unidades */}
-      <div 
+      {!directPhone && (
+      <div
         className={`
           absolute bottom-20 right-0
           bg-white rounded-2xl shadow-2xl
           overflow-hidden
           transition-all duration-300 ease-out
-          ${isOpen 
-            ? "opacity-100 translate-y-0 pointer-events-auto" 
+          ${isOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-4 pointer-events-none"
           }
         `}
@@ -148,6 +165,7 @@ export function WhatsAppFAB() {
           ))}
         </div>
       </div>
+      )}
 
       {/* Botão Principal */}
       <button

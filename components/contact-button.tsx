@@ -32,14 +32,18 @@ interface ContactButtonProps {
   variant?: "default" | "outline" | "ghost"
   size?: "default" | "sm" | "lg"
   message?: string
+  directPhone?: string
+  directObrigadoUrl?: string
 }
 
-export function ContactButton({ 
-  children, 
-  className = "", 
+export function ContactButton({
+  children,
+  className = "",
   variant = "default",
   size = "default",
-  message = "Olá! Vim pelo site e gostaria de mais informações."
+  message = "Olá! Vim pelo site e gostaria de mais informações.",
+  directPhone,
+  directObrigadoUrl,
 }: ContactButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -59,16 +63,39 @@ export function ContactButton({
   const handleSelectUnidade = (telefone: string, obrigadoUrl: string) => {
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${telefone}?text=${encodedMessage}`
-    
+
     // Redireciona para a página de obrigado correta da filial
     router.push(obrigadoUrl)
-    
+
     // Abre o WhatsApp em uma nova aba após um pequeno delay
     setTimeout(() => {
       window.open(whatsappUrl, "_blank")
     }, 500)
-    
+
     setIsOpen(false)
+  }
+
+  const handleDirectClick = () => {
+    if (!directPhone) return
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${directPhone}?text=${encodedMessage}`
+    router.push(directObrigadoUrl ?? "/obrigado")
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank")
+    }, 500)
+  }
+
+  if (directPhone) {
+    return (
+      <Button
+        variant={variant}
+        size={size}
+        onClick={handleDirectClick}
+        className={className}
+      >
+        {children}
+      </Button>
+    )
   }
 
   return (
