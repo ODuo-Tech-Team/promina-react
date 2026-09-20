@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Massa expansiva para desmonte de rocha e demolição de concreto sem explosivos em Campina Grande, João Pessoa e toda a Paraíba. Sem ruído, sem vibração e sem licença de detonação.",
   keywords:
     "massa expansiva, argamassa expansiva, desmonte de rocha, demolição sem explosivo, quebra de rocha, demolição de concreto, Campina Grande, João Pessoa, Paraíba",
+  // Página ainda com imagens/valores pendentes do cliente: fora do Google até fechar (remover ao concluir a task 868m5e578)
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Massa Expansiva para Demolição de Rocha e Concreto | Promina",
     description:
