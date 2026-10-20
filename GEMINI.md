@@ -4,6 +4,8 @@
 
 This file provides guidance to Gemini (Antigravity / Gemini CLI) when working with code in this repository.
 
+> 📖 **Regras de Deploy e Build**: Consulte [`regras.md`](regras.md) para o guia completo de build com Webpack, gerenciador `npm`, empacotamento de ZIP e deploy no hPanel da Hostinger.
+
 ## Commands
 
 Package manager is **npm** (padrão oficial da infraestrutura Hostinger). O lockfile oficial é `package-lock.json` (`pnpm-lock.yaml` e `pnpm-workspace.yaml` foram removidos).
@@ -72,6 +74,7 @@ Each unit has a `telefone` (wa.me phone), an `obrigadoUrl` (its `/obrigado/<slug
 ## Deploy na Hostinger (grupopromina.com.br) — Regra Obrigatória
 
 > ⚠️ **ATENÇÃO:** O site `grupopromina.com.br` roda em aplicação **Node.js (Next.js)** dentro da Hostinger (hPanel). Ele **NÃO** roda na Vercel e o push no GitHub `main` **NÃO** publica sozinho. Todo deploy é manual via upload de arquivo `.zip` no hPanel.
+> Veja o guia detalhado em [`regras.md`](regras.md).
 
 ### 1. Regras de Empacotamento do ZIP
 O pacote ZIP enviado para a Hostinger deve conter estritamente o código-fonte limpo:
@@ -86,7 +89,6 @@ No terminal, dentro de `LandingPages Oduo/promina-react`:
 ```bash
 git archive --format=zip --prefix=promina-react/ -o promina-react-deploy.zip HEAD
 ```
-*(Esse comando garante que apenas os arquivos versionados entrem no ZIP com a pasta `promina-react/` na raiz, excluindo automaticamente `.next`, `node_modules`, zips anteriores e arquivos soltos).*
 
 ### 3. Limpeza no servidor antes de reimplantar (se houve falha de build anterior)
 Se o build na Hostinger falhou anteriormente:
