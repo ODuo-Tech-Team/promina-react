@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { ArrowRight, CheckCircle2, VolumeX, ShieldCheck, Target, FileX } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { CtaZap } from "@/components/massa-expansiva/cta-zap"
+import { VideoBarauna } from "@/components/massa-expansiva/video-barauna"
 
 export const metadata: Metadata = {
   title: "Massa Expansiva para Demolição de Rocha | Promina",
@@ -10,8 +12,6 @@ export const metadata: Metadata = {
     "Massa expansiva para desmonte de rocha sem explosivos em Campina Grande, João Pessoa e toda a Paraíba. Desmonte controlado, sem vibração e com menos burocracia.",
   keywords:
     "massa expansiva, argamassa expansiva, desmonte de rocha, demolição sem explosivo, quebra de rocha, Campina Grande, João Pessoa, Paraíba",
-  // Página ainda com imagens/valores pendentes do cliente: fora do Google até fechar (remover ao concluir a task 868m5e578)
-  robots: { index: false, follow: false },
   openGraph: {
     title: "Massa Expansiva para Demolição de Rocha | Promina",
     description:
@@ -22,10 +22,30 @@ export const metadata: Metadata = {
 }
 
 const passos = [
-  { titulo: "Perfuração", texto: "Com a utilização do compressor pneumático, perfure a rocha com espaçamento entre 10 e 20 cm." },
-  { titulo: "Mistura", texto: "O produto é misturado com água na proporção de 0,3 L por kg." },
-  { titulo: "Aplicação", texto: "A pasta é colocada nos furos sem a necessidade de equipamentos especiais." },
-  { titulo: "Fragmentação", texto: "A expansão fratura a rocha em algumas horas, que poderá ser removida com o uso de alavanca ou martelo do compressor." },
+  {
+    titulo: "Perfuração",
+    texto: "Com a utilização do compressor pneumático, perfure a rocha com espaçamento entre 10 e 20 cm.",
+    imagem: "/images/massa-expansiva/passo-1-perfuracao.webp",
+    alt: "Rocha perfurada para aplicação de massa expansiva",
+  },
+  {
+    titulo: "Mistura",
+    texto: "O produto é misturado com água na proporção de 0,3 L por kg.",
+    imagem: "/images/massa-expansiva/passo-2-mistura.webp",
+    alt: "Embalagem de 20 kg de massa expansiva Promina no palete",
+  },
+  {
+    titulo: "Aplicação",
+    texto: "A pasta é colocada nos furos sem a necessidade de equipamentos especiais.",
+    imagem: "/images/massa-expansiva/passo-3-aplicacao.webp",
+    alt: "Aplicação da pasta de massa expansiva nos furos da rocha",
+  },
+  {
+    titulo: "Fragmentação",
+    texto: "A expansão fratura a rocha em algumas horas, que poderá ser removida com o uso de alavanca ou martelo do compressor.",
+    imagem: "/images/massa-expansiva/passo-4-fragmentacao.webp",
+    alt: "Rocha fragmentada após a ação da massa expansiva",
+  },
 ]
 
 const beneficios = [
@@ -52,20 +72,6 @@ const faq = [
   { p: "A Promina orienta a aplicação?", r: "Sim. Nossa equipe orienta o dimensionamento dos furos, a proporção da mistura e os cuidados de segurança para você obter o melhor resultado no primeiro uso." },
 ]
 
-function ImagemPendente({ titulo, detalhe, className = "" }: { titulo: string; detalhe: string; className?: string }) {
-  return (
-    <div
-      role="img"
-      aria-label={`${titulo} — imagem em breve`}
-      className={`flex flex-col items-center justify-center text-center rounded-2xl border-2 border-dashed border-white/25 bg-white/5 text-white/60 p-6 ${className}`}
-    >
-      <span className="text-xs font-bold uppercase tracking-widest text-[#FFCC29]/80 mb-1">Imagem pendente</span>
-      <strong className="text-sm">{titulo}</strong>
-      <span className="text-xs mt-1">{detalhe}</span>
-    </div>
-  )
-}
-
 export default function MassaExpansivaPage() {
   return (
     <main className="min-h-screen bg-[#F5F5F5]">
@@ -85,7 +91,7 @@ export default function MassaExpansivaPage() {
                 <span className="text-[#FFCC29]">Massa expansiva</span> para demolição de rocha
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
-                Fragmente rocha com segurança, sem vibração e sem licença de detonação. Atendemos obras e mineração
+                Fragmente rocha com segurança, sem vibração e com menos burocracia. Atendemos obras e mineração
                 em toda a Paraíba.
               </p>
               <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
@@ -112,12 +118,16 @@ export default function MassaExpansivaPage() {
                 </a>
               </div>
             </div>
-            {/* IMG: foto/vídeo real da aplicação em Baraúna (material do Drive do cliente) */}
-            <ImagemPendente
-              titulo="Aplicação real em rocha — registro de Baraúna"
-              detalhe="Substituir pela foto/vídeo do cliente"
-              className="aspect-[4/3]"
-            />
+            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
+              <Image
+                src="/images/massa-expansiva/barauna-aplicacao.webp"
+                alt="Aplicação real de massa expansiva em rocha — registro de Baraúna"
+                width={960}
+                height={720}
+                priority
+                className="w-full h-auto aspect-[4/3] object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -130,17 +140,34 @@ export default function MassaExpansivaPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#363334] mt-2 mb-4">Demolição controlada em 4 etapas</h2>
             <p className="text-[#6B6B6B] text-lg">
               A massa expansiva é um agente demolidor não explosivo: depois de aplicada, expande gradualmente dentro
-              do furo e fragmenta a rocha de forma silenciosa e controlada.
+              do furo e fragmenta a rocha de forma controlada e sem vibração.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {passos.map((p, i) => (
-              <div key={p.titulo} className="bg-[#F5F5F5] rounded-2xl p-6 border border-transparent hover:border-[#FFCC29] transition-all">
-                <div className="size-10 bg-[#FFCC29] rounded-xl flex items-center justify-center font-extrabold text-[#363334] mb-4">
-                  {i + 1}
+              <div
+                key={p.titulo}
+                className="bg-[#F5F5F5] rounded-2xl overflow-hidden border border-transparent hover:border-[#FFCC29] transition-all flex flex-col"
+              >
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#363334]">
+                  <Image
+                    src={p.imagem}
+                    alt={p.alt}
+                    width={800}
+                    height={1000}
+                    className="w-full h-full object-cover"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute top-3 left-3 size-10 bg-[#FFCC29] rounded-full flex items-center justify-center font-extrabold text-[#363334] shadow-md"
+                  >
+                    {i + 1}
+                  </div>
                 </div>
-                <h3 className="font-bold text-[#363334] text-lg mb-2">{p.titulo}</h3>
-                <p className="text-[#6B6B6B] text-sm leading-relaxed">{p.texto}</p>
+                <div className="p-6">
+                  <h3 className="font-bold text-[#363334] text-lg mb-2">{p.titulo}</h3>
+                  <p className="text-[#6B6B6B] text-sm leading-relaxed">{p.texto}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -206,9 +233,8 @@ export default function MassaExpansivaPage() {
                 Nossa equipe confirma a especificação para o seu tipo de rocha e temperatura ambiente.
               </p>
             </div>
-            <div>
-              {/* IMG: vídeo curto da fragmentação em andamento (Baraúna) */}
-              <ImagemPendente titulo="Vídeo — fragmentação da rocha em tempo real" detalhe="Substituir pelo vídeo do cliente" className="min-h-[300px]" />
+            <div className="flex flex-col items-start">
+              <VideoBarauna />
               <div className="mt-6">
                 <CtaZap
                   posicao="specs"
