@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, type ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, Phone, MapPin } from "lucide-react"
@@ -42,7 +42,7 @@ const enderecos = [
   },
 ]
 
-export function Navbar() {
+export function Navbar({ customCta }: { customCta?: ReactNode } = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [currentEnderecoIndex, setCurrentEnderecoIndex] = useState(0)
 
@@ -130,12 +130,14 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <ContactButton 
-              className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-6"
-              message="Olá! Gostaria de solicitar um orçamento."
-            >
-              Solicitar Orçamento
-            </ContactButton>
+            {customCta ?? (
+              <ContactButton 
+                className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-6"
+                message="Olá! Gostaria de solicitar um orçamento."
+              >
+                Solicitar Orçamento
+              </ContactButton>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -163,12 +165,16 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <ContactButton 
-                className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold mt-2 w-full"
-                message="Olá! Gostaria de solicitar um orçamento."
-              >
-                Solicitar Orçamento
-              </ContactButton>
+              {customCta ? (
+                <div className="mt-2 w-full [&>*]:w-full">{customCta}</div>
+              ) : (
+                <ContactButton 
+                  className="bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold mt-2 w-full"
+                  message="Olá! Gostaria de solicitar um orçamento."
+                >
+                  Solicitar Orçamento
+                </ContactButton>
+              )}
               
               {/* Mobile Contact Info */}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[#363334]/20 text-[#6B6B6B] text-sm">

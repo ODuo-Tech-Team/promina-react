@@ -2,9 +2,8 @@
 
 import type { ReactNode } from "react"
 
-// Número de destino dos leads de massa expansiva: Campina Grande (praça foco do produto).
-// PENDENTE: confirmar com a Promina (task 868m5e578).
-const ZAP_NUMERO = "5583987177707"
+// Número de destino dos leads de massa expansiva: Home Center CG (confirmado em 23/11/2026 - task 868m5e578).
+const ZAP_NUMERO = "5583998030018"
 // A mensagem é o identificador de origem do lead no ChatGuru — não alterar o texto.
 const ZAP_TEXTO = "Olá! Vim da página de Massa Expansiva e quero um orçamento."
 const ZAP_URL = `https://wa.me/${ZAP_NUMERO}?text=${encodeURIComponent(ZAP_TEXTO)}`

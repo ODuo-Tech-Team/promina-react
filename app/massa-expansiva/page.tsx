@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2, VolumeX, ShieldCheck, Target, FileX } from "l
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { CtaZap } from "@/components/massa-expansiva/cta-zap"
-import { VideoBarauna } from "@/components/massa-expansiva/video-barauna"
+import { HeroCarousel } from "@/components/massa-expansiva/hero-carousel"
 
 export const metadata: Metadata = {
   title: "Massa Expansiva para Demolição de Rocha | Promina",
@@ -75,7 +75,16 @@ const faq = [
 export default function MassaExpansivaPage() {
   return (
     <main className="min-h-screen bg-[#F5F5F5]">
-      <Navbar />
+      <Navbar
+        customCta={
+          <CtaZap
+            posicao="topo"
+            className="inline-flex items-center justify-center bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-6 h-10 rounded-md transition-colors"
+          >
+            Solicitar Orçamento
+          </CtaZap>
+        }
+      />
 
       {/* Hero */}
       <section className="pt-32 md:pt-40 pb-20 bg-gradient-to-br from-[#363334] via-[#4a4748] to-[#363334] relative overflow-hidden">
@@ -118,16 +127,7 @@ export default function MassaExpansivaPage() {
                 </a>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
-              <Image
-                src="/images/massa-expansiva/barauna-aplicacao.webp"
-                alt="Aplicação real de massa expansiva em rocha — registro de Baraúna"
-                width={960}
-                height={720}
-                priority
-                className="w-full h-auto aspect-[4/3] object-cover"
-              />
-            </div>
+            <HeroCarousel />
           </div>
         </div>
       </section>
@@ -147,27 +147,16 @@ export default function MassaExpansivaPage() {
             {passos.map((p, i) => (
               <div
                 key={p.titulo}
-                className="bg-[#F5F5F5] rounded-2xl overflow-hidden border border-transparent hover:border-[#FFCC29] transition-all flex flex-col"
+                className="bg-[#F5F5F5] rounded-2xl p-6 border border-transparent hover:border-[#FFCC29] transition-all flex flex-col"
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#363334]">
-                  <Image
-                    src={p.imagem}
-                    alt={p.alt}
-                    width={800}
-                    height={1000}
-                    className="w-full h-full object-cover"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute top-3 left-3 size-10 bg-[#FFCC29] rounded-full flex items-center justify-center font-extrabold text-[#363334] shadow-md"
-                  >
-                    {i + 1}
-                  </div>
+                <div
+                  aria-hidden="true"
+                  className="size-10 bg-[#FFCC29] rounded-full flex items-center justify-center font-extrabold text-[#363334] shadow-sm mb-4"
+                >
+                  {i + 1}
                 </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-[#363334] text-lg mb-2">{p.titulo}</h3>
-                  <p className="text-[#6B6B6B] text-sm leading-relaxed">{p.texto}</p>
-                </div>
+                <h3 className="font-bold text-[#363334] text-lg mb-2">{p.titulo}</h3>
+                <p className="text-[#6B6B6B] text-sm leading-relaxed">{p.texto}</p>
               </div>
             ))}
           </div>
@@ -234,7 +223,15 @@ export default function MassaExpansivaPage() {
               </p>
             </div>
             <div className="flex flex-col items-start">
-              <VideoBarauna />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#2a2728]">
+                <Image
+                  src="/images/massa-expansiva/passo-2-mistura.webp"
+                  alt="Saco de 20 kg de massa expansiva Promina"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto aspect-[4/3] object-cover"
+                />
+              </div>
               <div className="mt-6">
                 <CtaZap
                   posicao="specs"
