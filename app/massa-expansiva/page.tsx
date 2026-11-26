@@ -225,11 +225,12 @@ export default function MassaExpansivaPage() {
             <div className="flex flex-col items-start">
               <div className="relative w-full rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#2a2728]">
                 <Image
-                  src="/images/massa-expansiva/passo-2-mistura.webp"
+                  src="/images/massa-expansiva/saco-20kg.webp"
                   alt="Saco de 20 kg de massa expansiva Promina"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1067}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="w-full h-auto"
                 />
               </div>
               <div className="mt-6">

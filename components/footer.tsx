@@ -28,17 +28,20 @@ const lojas = [
   },
 ]
 
-export function Footer() {
+// `unidade` limita o rodapé a uma única loja (ex.: LP de venda, só Home Center).
+export function Footer({ unidade }: { unidade?: string } = {}) {
+  const lojasVisiveis = unidade ? lojas.filter((loja) => loja.nome === unidade) : lojas
+
   return (
     <footer className="bg-[#1a1a1a] text-white" id="footer">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${unidade ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {/* Logo */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <Image
               src="/images/logo-promina-branco-amarelo.png"
-              alt="Promina - Locação de Máquinas e Equipamentos"
+              alt={unidade ? `Promina - ${unidade}` : "Promina - Locação de Máquinas e Equipamentos"}
               width={220}
               height={70}
               className="h-14 w-auto"
@@ -46,9 +49,9 @@ export function Footer() {
           </div>
 
           {/* Endereços e Telefones */}
-          {lojas.map((loja) => (
+          {lojasVisiveis.map((loja) => (
             <div key={loja.nome} className="flex flex-col gap-2">
-              <h4 className="font-bold text-white mb-1">{loja.nome}</h4>
+              <h4 className="font-bold text-white mb-1">{unidade ? `Promina ${loja.nome}` : loja.nome}</h4>
               <a 
                 href={loja.mapaUrl}
                 target="_blank"
@@ -56,7 +59,7 @@ export function Footer() {
                 className="flex items-start gap-2 text-sm text-white/70 hover:text-[#FFCC29] transition-colors"
               >
                 <MapPin className="size-4 mt-0.5 shrink-0" />
-                <span>{loja.endereco}</span>
+                <span>{unidade ? loja.endereco.replace(", 240,", ", 240, Bloco C,") : loja.endereco}</span>
               </a>
               <a 
                 href={`tel:${loja.telefoneFixo.replace(/[^\d+]/g, "")}`}

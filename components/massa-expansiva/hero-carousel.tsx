@@ -36,8 +36,8 @@ export function HeroCarousel() {
   const next = () => setIndex((i) => (i + 1) % slides.length)
 
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#2a2728]">
-      <div className="relative w-full aspect-[4/3] sm:aspect-[4/3]">
+    <div className="relative w-full max-w-[440px] mx-auto rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#2a2728]">
+      <div className="relative w-full aspect-[4/5]">
         {slides.map((slide, i) => (
           <div
             key={slide.src}

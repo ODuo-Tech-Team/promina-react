@@ -19,17 +19,17 @@ import { Footer } from "@/components/footer"
 import { CtaZap } from "@/components/andaimes-escoras/cta-zap"
 
 export const metadata: Metadata = {
-  title: "Aluguel de Andaimes e Escoras Metálicas em Campina Grande | Promina",
+  title: "Venda de Andaimes e Escoras Metálicas em Campina Grande | Promina",
   description:
-    "Aluguel de andaimes tubulares e escoras metálicas em Campina Grande e região. Equipamentos revisados, entrega rápida e atendimento técnico para sua obra.",
+    "Compre andaimes, escoras metálicas e acessórios na Promina Home Center, em Campina Grande. Orientação técnica na escolha e entrega na sua obra. Peça seu orçamento pelo WhatsApp.",
   keywords:
-    "aluguel de andaimes, escoras metálicas, andaime tubular, escoramento de laje, escora de muro, Campina Grande, Paraíba, Promina",
+    "venda de andaimes, comprar andaime, escoras metálicas, andaime tubular, escoramento de laje, escora de muro, Campina Grande, Paraíba, Promina",
   // Aguardando aprovação do cliente (task 1gab6jjzrqb) antes de liberar indexação
   robots: { index: false, follow: false },
   openGraph: {
-    title: "Aluguel de Andaimes e Escoras Metálicas em Campina Grande | Promina",
+    title: "Venda de Andaimes e Escoras Metálicas em Campina Grande | Promina",
     description:
-      "Estrutura segura para sua obra, com entrega rápida e equipamentos revisados em Campina Grande e região.",
+      "Compre andaimes, escoras metálicas e acessórios na Promina Home Center, em Campina Grande. Orientação técnica na escolha e entrega na sua obra. Peça seu orçamento pelo WhatsApp.",
     type: "website",
     locale: "pt_BR",
   },
@@ -39,7 +39,7 @@ const barraConfianca = [
   { valor: "15+ anos", label: "de mercado" },
   { valor: "15 mil+", label: "obras atendidas" },
   { valor: "4,9 no Google", label: "247+ avaliações" },
-  { valor: "Entrega rápida", label: "em CG e região" },
+  { valor: "Entrega", label: "na obra" },
 ]
 
 const produtos = [
@@ -95,24 +95,29 @@ const produtos = [
 
 const beneficios = [
   {
-    icone: ShieldCheck,
-    titulo: "Equipamentos revisados",
-    texto: "Inspeção e manutenção periódica antes de cada locação para garantir segurança na sua obra.",
-  },
-  {
-    icone: Truck,
-    titulo: "Entrega rápida na região",
-    texto: "Logística própria saindo de Campina Grande para agilizar o cronograma da sua construção.",
-  },
-  {
-    icone: Wrench,
-    titulo: "Linha completa de acessórios",
-    texto: "Pisos metálicos, bases ajustáveis e rodízios com freio para montar a estrutura completa.",
+    icone: Layers,
+    titulo: "Linha completa",
+    texto: "Andaimes, escoras e acessórios no mesmo lugar.",
   },
   {
     icone: MessageCircle,
-    titulo: "Atendimento técnico ágil",
-    texto: "Orçamento direto no WhatsApp com a equipe da unidade Campina Grande.",
+    titulo: "Orientação técnica",
+    texto: "Nossa equipe ajuda a escolher o produto e a quantidade certa.",
+  },
+  {
+    icone: Building2,
+    titulo: "Todos os portes de obra",
+    texto: "Atendimento da reforma à construtora.",
+  },
+  {
+    icone: Truck,
+    titulo: "Entrega na obra",
+    texto: "Retire na loja ou receba no endereço da sua obra.",
+  },
+  {
+    icone: ShieldCheck,
+    titulo: "Mais de 15 anos",
+    texto: "Atendendo obras na Paraíba.",
   },
 ]
 
@@ -146,20 +151,20 @@ const aplicacoes = [
 
 const passos = [
   {
-    titulo: "Chama no WhatsApp",
-    texto: "Clique em qualquer botão da página e fale direto com a Locação Campina Grande.",
+    titulo: "Chame a gente no WhatsApp",
+    texto: "Clique em qualquer botão da página e fale com o Promina Home Center.",
   },
   {
-    titulo: "Informa medidas, quantidade e prazo",
-    texto: "Passe a altura da obra, os equipamentos necessários e o período estimado de uso.",
+    titulo: "Informe o que precisa",
+    texto: "Diga os produtos e as quantidades de que precisa.",
   },
   {
-    titulo: "Recebe o orçamento",
-    texto: "Nossa equipe confirma a disponibilidade imediata e envia a proposta para aprovação.",
+    titulo: "Receba o orçamento",
+    texto: "Você recebe o orçamento com a orientação da nossa equipe.",
   },
   {
-    titulo: "Entrega na obra",
-    texto: "Equipamentos revisados entregues no endereço da sua obra em Campina Grande e região.",
+    titulo: "Retire ou receba",
+    texto: "Retire na loja ou receba na sua obra.",
   },
 ]
 
@@ -177,27 +182,40 @@ const specs = [
 
 const faq = [
   {
-    p: "Qual o prazo mínimo de locação?",
-    r: "[A confirmar com o cliente — consulte nossa equipe pelo WhatsApp para verificar as opções de diária, quinzena ou mensal.]",
+    p: "Vocês vendem para obra pequena e para construtora?",
+    r: "Sim. Atendemos de reformas a grandes obras. Informe o que precisa e a quantidade, e montamos o orçamento.",
   },
   {
-    p: "Vocês entregam e montam?",
-    r: "[A confirmar com o cliente — realizamos a entrega e retirada em Campina Grande e região; consulte condições de montagem no WhatsApp.]",
+    p: "Como sei quantas escoras ou peças de andaime preciso?",
+    r: "Mande as medidas da laje ou da área de trabalho pelo WhatsApp. Nossa equipe ajuda a calcular.",
   },
   {
-    p: "Atendem quais cidades?",
-    r: "[A confirmar com o cliente — atendimento focado em Campina Grande e cidades da região; informe sua localização no WhatsApp para confirmar frete.]",
+    p: "Vocês fazem entrega?",
+    r: "Sim, entregamos na sua obra. Consulte pelo WhatsApp a entrega para a sua cidade.",
   },
   {
-    p: "Como calcular a quantidade de escoras?",
-    r: "[A confirmar com o cliente — envie a área da laje, o pé-direito e o projeto no WhatsApp para nossa equipe orientar o dimensionamento.]",
+    p: "Quais as formas de pagamento?",
+    r: "Consulte as condições com a nossa equipe pelo WhatsApp.",
+  },
+  {
+    p: "Posso comprar só os acessórios?",
+    r: "Sim. Base ajustável, piso metálico, rodinha com freio e os demais itens podem ser comprados separadamente.",
   },
 ]
 
 export default function AndaimesEscorasPage() {
   return (
     <main className="min-h-screen bg-[#F5F5F5] pb-20 md:pb-0">
-      <Navbar />
+      <Navbar
+        customCta={
+          <CtaZap
+            posicao="topo"
+            className="inline-flex items-center justify-center bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold px-6 h-10 rounded-md transition-colors"
+          >
+            Solicitar Orçamento
+          </CtaZap>
+        }
+      />
 
       {/* Hero */}
       <section className="pt-32 md:pt-40 pb-16 bg-gradient-to-br from-[#363334] via-[#4a4748] to-[#363334] relative overflow-hidden">
@@ -207,16 +225,17 @@ export default function AndaimesEscorasPage() {
             <div className="inline-flex items-center gap-2 bg-[#FFCC29]/20 border border-[#FFCC29]/40 rounded-full px-4 py-2 mb-6">
               <span className="size-2 bg-[#FFCC29] rounded-full animate-pulse" />
               <span className="text-[#FFCC29] font-medium text-sm">
-                Locação Campina Grande — Pronta entrega na região
+                Promina Home Center — Campina Grande
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6 text-balance">
-              Aluguel de <span className="text-[#FFCC29]">andaimes e escoras metálicas</span> em Campina Grande e região
+              Venda de <span className="text-[#FFCC29]">andaimes e escoras metálicas</span> em Campina Grande e região
             </h1>
 
             <p className="text-lg md:text-xl text-white/85 mb-8 leading-relaxed max-w-2xl">
-              Estrutura segura para sua obra, com entrega rápida e equipamentos revisados.
+              Andaimes, escoras e acessórios para obras de todos os portes, da reforma à construtora. Compre com
+              orientação da nossa equipe e receba na sua obra.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -231,7 +250,7 @@ export default function AndaimesEscorasPage() {
                 href="#produtos"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white bg-white/10 text-white hover:bg-[#FFCC29] hover:border-[#FFCC29] hover:text-[#363334] font-medium text-lg h-14 px-8 rounded-md transition-colors"
               >
-                Ver equipamentos
+                Ver produtos
               </a>
             </div>
 
@@ -254,7 +273,7 @@ export default function AndaimesEscorasPage() {
       {/* Benefícios */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {beneficios.map((b) => {
               const Icone = b.icone
               return (
@@ -278,13 +297,12 @@ export default function AndaimesEscorasPage() {
       <section id="produtos" className="py-20 bg-[#F5F5F5]">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-12">
-            <span className="text-[#8A6A00] font-bold text-sm uppercase tracking-wider">Catálogo para locação</span>
+            <span className="text-[#8A6A00] font-bold text-sm uppercase tracking-wider">Catálogo para venda</span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#363334] mt-2 mb-4">
-              Andaimes, escoras e acessórios disponíveis
+              Andaimes, escoras e acessórios à venda
             </h2>
             <p className="text-[#6B6B6B] text-lg">
-              Selecione o equipamento ideal para a sua obra e consulte a disponibilidade em estoque com a unidade de
-              Campina Grande.
+              Escolha o produto ideal para a sua obra e peça o orçamento ao Promina Home Center, em Campina Grande.
             </p>
           </div>
 
@@ -308,10 +326,9 @@ export default function AndaimesEscorasPage() {
                   <p className="text-[#6B6B6B] text-sm leading-relaxed mb-5 flex-1">{prod.descricao}</p>
                   <CtaZap
                     posicao={`produto_${prod.nome}`}
-                    mensagem={`Olá! Vim da página de Andaimes e Escoras e quero verificar a disponibilidade de: ${prod.nome}.`}
                     className="inline-flex items-center justify-center gap-2 w-full bg-[#363334] hover:bg-[#FFCC29] text-white hover:text-[#363334] font-bold text-sm h-11 px-4 rounded-md transition-colors"
                   >
-                    Verificar disponibilidade
+                    Pedir orçamento
                     <ArrowRight className="size-4" />
                   </CtaZap>
                 </div>
@@ -356,9 +373,9 @@ export default function AndaimesEscorasPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-12">
             <span className="text-[#8A6A00] font-bold text-sm uppercase tracking-wider">Processo simples</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#363334] mt-2 mb-4">Como funciona a locação</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#363334] mt-2 mb-4">Como funciona a compra</h2>
             <p className="text-[#6B6B6B] text-lg">
-              Do primeiro contato até a entrega no canteiro de obras sem burocracia.
+              Do primeiro contato até a retirada na loja ou a entrega na obra.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -383,7 +400,7 @@ export default function AndaimesEscorasPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-10">
             <span className="text-[#FFCC29] font-bold text-sm uppercase tracking-wider">Informações técnicas</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Especificações dos equipamentos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Especificações dos produtos</h2>
             <p className="text-white/75 text-lg">
               Dimensões de referência do catálogo Promina. Nossa equipe confirma a configuração ideal no WhatsApp.
             </p>
@@ -393,7 +410,7 @@ export default function AndaimesEscorasPage() {
             <table className="w-full text-left text-sm md:text-base">
               <thead>
                 <tr>
-                  <th className="bg-[#FFCC29]/15 text-[#FFCC29] font-bold px-5 py-3.5">Equipamento</th>
+                  <th className="bg-[#FFCC29]/15 text-[#FFCC29] font-bold px-5 py-3.5">Produto</th>
                   <th className="bg-[#FFCC29]/15 text-[#FFCC29] font-bold px-5 py-3.5">Especificação</th>
                 </tr>
               </thead>
@@ -426,7 +443,7 @@ export default function AndaimesEscorasPage() {
           <div className="mb-10">
             <span className="text-[#8A6A00] font-bold text-sm uppercase tracking-wider">Dúvidas frequentes</span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#363334] mt-2">
-              Perguntas comuns sobre locação de andaimes e escoras
+              Perguntas comuns sobre a compra de andaimes e escoras
             </h2>
           </div>
           <div className="space-y-3">
@@ -444,14 +461,14 @@ export default function AndaimesEscorasPage() {
         </div>
       </section>
 
-      {/* CTA final + unidade Locação CG */}
+      {/* CTA final + Home Center */}
       <section className="py-20 bg-[#FFCC29]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#363334] max-w-2xl mx-auto mb-4">
             Precisa de andaimes ou escoras para sua obra?
           </h2>
           <p className="text-[#363334]/85 text-lg max-w-xl mx-auto mb-8">
-            Fale com a unidade Locação Campina Grande e solicite seu orçamento pelo WhatsApp.
+            Fale com o Promina Home Center e solicite seu orçamento pelo WhatsApp.
           </p>
 
           <CtaZap
@@ -466,9 +483,9 @@ export default function AndaimesEscorasPage() {
             <div className="flex items-start gap-3">
               <MapPin className="size-5 text-[#363334] shrink-0 mt-0.5" />
               <div>
-                <p className="font-bold text-[#363334] text-sm">Locação Campina Grande</p>
+                <p className="font-bold text-[#363334] text-sm">Promina Home Center</p>
                 <p className="text-[#363334]/80 text-sm">
-                  R. Padre Aristides Ferreira da Cruz, 240 — Catolé, Campina Grande - PB
+                  R. Padre Aristides Ferreira da Cruz, 240, Bloco C — Catolé, Campina Grande - PB
                 </p>
               </div>
             </div>
@@ -485,7 +502,7 @@ export default function AndaimesEscorasPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer unidade="Home Center Campina Grande" />
 
       {/* Botão WhatsApp fixo no mobile */}
       <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">

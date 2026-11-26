@@ -2,20 +2,18 @@
 
 import type { ReactNode } from "react"
 
-const ZAP_NUMERO = "5583987177707"
-const MENSAGEM_PADRAO =
-  "Olá! Vim da página de Andaimes e Escoras e gostaria de solicitar um orçamento."
+// Home Center Campina Grande: a LP é só de venda (task 1gab6jjzrqb, 25/11/2026).
+const ZAP_NUMERO = "5583998030018"
+const MENSAGEM = "Olá! Vim da página de Andaimes e Escoras e quero um orçamento."
 
 type Props = {
   posicao: string
-  mensagem?: string
   className?: string
   children: ReactNode
 }
 
-export function CtaZap({ posicao, mensagem, className, children }: Props) {
-  const texto = mensagem || MENSAGEM_PADRAO
-  const href = `https://wa.me/${ZAP_NUMERO}?text=${encodeURIComponent(texto)}`
+export function CtaZap({ posicao, className, children }: Props) {
+  const href = `https://wa.me/${ZAP_NUMERO}?text=${encodeURIComponent(MENSAGEM)}`
 
   const onClick = () => {
     const w = window as unknown as { dataLayer?: Record<string, unknown>[] }
