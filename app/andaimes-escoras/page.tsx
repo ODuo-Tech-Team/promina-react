@@ -45,7 +45,7 @@ const barraConfianca = [
 const produtos = [
   {
     nome: "Andaimes Tubulares (NP e N)",
-    imagem: "/images/andaimes-escoras/andaimes-tubulares.webp",
+    imagem: "/images/andaimes-escoras/andaimes-tubulares-v2.webp",
     descricao:
       "Modelos NP (1,0 × 1,0 m) e N galvanizado (1,0 × 1,5 m), fixos ou com rodízios para trabalho em altura.",
   },
@@ -69,25 +69,25 @@ const produtos = [
   },
   {
     nome: "Base Ajustável",
-    imagem: "/images/andaimes-escoras/base-ajustavel.webp",
+    imagem: "/images/andaimes-escoras/base-ajustavel-v2.webp",
     descricao:
       "Sapata regulável para nivelamento e apoio seguro na base de andaimes e torres de escoramento.",
   },
   {
     nome: "Piso Metálico",
-    imagem: "/images/andaimes-escoras/piso-metalico.webp",
+    imagem: "/images/andaimes-escoras/piso-metalico-v2.webp",
     descricao:
       "Plataforma metálica encaixada e travada (1,0 / 1,5 m) para circulação e trabalho seguro no andaime.",
   },
   {
     nome: "Rodinha com Freio",
-    imagem: "/images/andaimes-escoras/rodinha-com-freio.webp",
+    imagem: "/images/andaimes-escoras/rodinha-com-freio-v2.webp",
     descricao:
       "Rodízio giratório com freio e encaixe para tubo de andaime, ideal para movimentação em piso plano.",
   },
   {
     nome: "Forcado Metálico",
-    imagem: "/images/andaimes-escoras/forcado-metalico.webp",
+    imagem: "/images/andaimes-escoras/forcado-metalico-v2.webp",
     descricao:
       "Acessório metálico para apoio e encaixe no sistema de escoramento de obras.",
   },
@@ -241,7 +241,7 @@ export default function AndaimesEscorasPage() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <CtaZap
                 posicao="hero"
-                className="inline-flex items-center justify-center gap-2 bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-lg h-14 px-8 rounded-md transition-colors"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-[#FFCC29] text-[#363334] hover:bg-[#FFCC29]/90 font-bold text-[15px] sm:text-lg h-14 px-3 sm:px-8 rounded-md transition-colors"
               >
                 Solicitar orçamento pelo WhatsApp
                 <ArrowRight className="size-5 ml-1" />
